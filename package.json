@@ -11,8 +11,16 @@
   "engines": {
     "vscode": "^1.32.0"
   },
+  "activationEvents": [
+    "onCommand:extension.helloworld"
+  ],
   "contributes": {
-    "commands": []
+    "commands": [
+      {
+        "command": "extension.helloworld",
+        "title": "Hello World"
+      }
+    ]
   },
   "keywords": [
     "lorem",
