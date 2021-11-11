@@ -1,4 +1,4 @@
-const words = require('words.json')
+const words = require('./words.json')
 const randomItem = require('./randomItem');
 
 const generate = (n) => {

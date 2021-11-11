@@ -10,16 +10,16 @@ const fs = require('fs');
 const activate = (context) => {
     console.log('now active!');
 
-    const files = fs.readdirSync(__dirname + "/commands", { withFileTypes: true }).filter(file => file.name.split`.`.pop() === "js");
+    fs.readdirSync(__dirname + "/commands", { withFileTypes: true })
+        .filter(file => file.name.split`.`.pop() === "js")
+        .forEach(file => {
+            const command = require(`./commands/${file.name}`);
 
-    files.forEach(file => {
-        const command = require(`./commands/${file.name}`);
+            const disposable = vscode.commands.registerCommand('lorem_ipsum.' + command.name, command.execute);
 
-        const disposable = vscode.commands.registerCommand('lorem_ipsum.' + command.name, command.execute);
-        console.log(command.execute);
-
-        context.subscriptions.push(disposable);
-    });
+            console.log(command.name);
+            context.subscriptions.push(disposable);
+        });
 };
 
 /**
