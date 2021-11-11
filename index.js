@@ -4,7 +4,10 @@ const vscode = require('vscode');
  * @description this method is called when your extension is activated
  * @param {vscode.ExtensionContext} context - The context for the extension
  */
-function activate(context) {
+
+const activate = (context) => {
+    // Use the console to output diagnostic information (console.log) and errors (console.error)
+    // This line of code will only be executed once when your extension is activated
     console.log('Congratulations, your extension "helloworld-minimal-sample" is now active!');
 
     // Hello World command
@@ -12,7 +15,20 @@ function activate(context) {
         vscode.window.showInformationMessage('Hello World!');
     });
 
+    const generateCommand = vscode.commands.registerCommand('lorem_ipsum.generate', async () => {
+        const res = await vscode.window.showInputBox({
+            placeholder: 'hi'
+        });
+
+        const n = parseInt(res);
+        if (!n) 
+            return vscode.window.showInformationMessage('You must enter a number of words to generate.');
+
+        vscode.window.showInformationMessage('Generating ' + n + ' words...');
+    });
+
     context.subscriptions.push(disposable);
+    context.subscriptions.push(generateCommand);
 };
 
 /**
