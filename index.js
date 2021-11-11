@@ -13,7 +13,8 @@ const activate = (context) => {
     files.forEach(file => {
         const command = require(`./commands/${file.name}`);
 
-        const disposable = vscode.commands.registerCommand(command.name, command.execute);
+        const disposable = vscode.commands.registerCommand('lorem_ipsum.' + command.name, command.execute);
+        console.log(command.execute);
 
         context.subscriptions.push(disposable);
     });
