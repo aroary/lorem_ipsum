@@ -12,12 +12,12 @@
     "vscode": "^1.32.0"
   },
   "activationEvents": [
-    "onCommand:extension.helloworld"
+    "onCommand:lorem_ipsum.helloworld"
   ],
   "contributes": {
     "commands": [
       {
-        "command": "extension.helloworld",
+        "command": "lorem_ipsum.helloworld",
         "title": "Hello World"
       }
     ]
