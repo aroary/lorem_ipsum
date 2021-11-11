@@ -1,8 +1,7 @@
+const words = require('words.json')
 const randomItem = require('./randomItem');
 
 const generate = (n) => {
-    const words = require('words.json').words;
-
     const generated = [];
 
     for (let i = 0; i < n; i++) {
