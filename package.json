@@ -1,0 +1,30 @@
+{
+  "name": "lorem_ipsum",
+  "version": "1.0.0",
+  "description": "Visual Studios Code extention",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aroary/lorem_ipsum.git"
+  },
+  "engines": {
+    "vscode": "^1.32.0"
+  },
+  "contributes": {
+    "commands": []
+  },
+  "keywords": [
+    "lorem",
+    "ipsum"
+  ],
+  "author": "aroary",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aroary/lorem_ipsum/issues"
+  },
+  "homepage": "https://github.com/aroary/lorem_ipsum#readme",
+  "dependencies": {
+    "vscode": "^1.1.37"
+  }
+}
