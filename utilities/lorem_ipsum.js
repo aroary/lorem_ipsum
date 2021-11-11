@@ -7,7 +7,7 @@ const generate = (n) => {
 
     for (let i = 0; i < n; i++) {
         // Start every generated string with 'lorem ipsum dolor sit amet consectetur adipisicing elit.'
-        if (i < 9) generated.push('lorem ipsum dolor sit amet consectetur adipisicing elit.'.split(' ')[i]);
+        if (i < 9) generated.push('lorem ipsum dolor sit amet consectetur adipisicing elit.'.split` `[i]);
         else generated.push(randomItem(words) + randomItem(["", "", "", "", ".", ",", "!", "?"]));
     };
 
