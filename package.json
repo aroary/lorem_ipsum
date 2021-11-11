@@ -2,7 +2,7 @@
   "name": "lorem_ipsum",
   "version": "1.0.0",
   "description": "Visual Studios Code extention",
-  "main": "index.js",
+  "main": "example.js",
   "scripts": {},
   "repository": {
     "type": "git",
@@ -12,13 +12,18 @@
     "vscode": "^1.32.0"
   },
   "activationEvents": [
-    "onCommand:extension.helloworld"
+    "onCommand:extension.helloworld",
+    "onCommand:extension.loremipsum"
   ],
   "contributes": {
     "commands": [
       {
         "command": "extension.helloworld",
         "title": "Hello World"
+      },
+      {
+        "command": "extension.loremipsum",
+        "title": "Generate Lorem Ipsum"
       }
     ]
   },
@@ -33,6 +38,6 @@
   },
   "homepage": "https://github.com/aroary/lorem_ipsum#readme",
   "dependencies": {
-    "vscode": "^1.1.37"
+    "vscode": "^0.9.9"
   }
 }

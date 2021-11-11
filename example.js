@@ -23,6 +23,10 @@ function activate(context) {
         vscode.window.showInformationMessage('Hello World!');
     });
 
+    const loremIpsum = vscode.commands.registerCommand('extension.loremipsum', () => {
+        vscode.window.showInformationMessage('gemnerating...');
+    });
+
     context.subscriptions.push(disposable);
 }
 
