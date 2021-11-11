@@ -2,7 +2,7 @@ const vscode = require('vscode');
 
 async function execute() {
     const res = await vscode.window.showInputBox({
-        placeholder: 'hi'
+        placeHolder: 'Number of words to generate'
     });
 
     const n = parseInt(res);
