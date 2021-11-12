@@ -1,7 +1,9 @@
 {
-  "name": "lorem_ipsum",
+  "name": "legit_lorem_ipsum",
+  "displayName": "legit lorem ipsum",
   "version": "1.0.0",
-  "description": "Visual Studios Code extention",
+  "description": "Add lorem ipsum to your code",
+  "publisher": "aroary",
   "main": "index.js",
   "scripts": {},
   "repository": {
