@@ -1,8 +1,6 @@
 const vscode = require('vscode');
 const fs = require('fs');
 
-// "Lorem ipsum dolor sit amet"
-
 /**
  * @description this method is called when your extension is activated
  * @param {vscode.ExtensionContext} context - The context for the extension
