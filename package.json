@@ -39,7 +39,8 @@
     "url": "https://github.com/aroary/lorem_ipsum/issues"
   },
   "homepage": "https://github.com/aroary/lorem_ipsum#readme",
-  "dependencies": {
+  "devDependencies": {
     "vscode": "^1.1.37"
-  }
+  },
+  "dependencies": {}
 }
