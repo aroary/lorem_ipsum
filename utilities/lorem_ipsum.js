@@ -10,19 +10,16 @@ const generate = (n) => {
         else generated.push(randomItem(words) + randomItem(["", "", "", "", ".", ",", "!", "?"]));
     };
 
-    let fullString = generated.join` `.replace(/  /gm, ' ');
+    let fullString = generated.join` `.replace('  ', ' ');
     const splitted = fullString.split` `;
     for (let i = 0; i < splitted.length; i++) {
-        if ([".", "!", "?"].includes(splitted[i].slice(-1))) {
+        if ([".", ",", "!", "?"].includes(splitted[i].slice(-1))) {
             const charPos = splitted.slice(0, i + 1).join` `.length + 1;
-            fullString = 
-                fullString.slice(0, charPos) + 
-                fullString.charAt(charPos).toUpperCase() + 
-                fullString.slice(charPos, fullString.length);
+            fullString = fullString.slice(0, charPos) + fullString.charAt(charPos).toUpperCase() + fullString.slice(charPos, fullString.length);
         };
     };
 
-    [/,\./, /,!/, /,\?/, /!!/, /\.\./, /\?\?/, / \?/, / \./, / \!/].forEach(r => fullString.replace(r, ''));
+    fullString = fullString.replace(/[?!., ]{2,}/, () => '');
 
     return fullString.charAt(0).toUpperCase() + fullString.slice(1, fullString.length) + ".";
 };

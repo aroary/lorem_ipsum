@@ -14,15 +14,10 @@
     "vscode": "^1.32.0"
   },
   "activationEvents": [
-    "onCommand:lorem_ipsum.helloworld",
     "onCommand:lorem_ipsum.generate"
   ],
   "contributes": {
     "commands": [
-      {
-        "command": "lorem_ipsum.helloworld",
-        "title": "Hello World"
-      },
       {
         "command": "lorem_ipsum.generate",
         "title": "Generate Lorem Ipsum"
