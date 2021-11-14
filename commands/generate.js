@@ -2,10 +2,10 @@ const vscode = require('vscode');
 const generate = require("../utilities/lorem_ipsum");
 
 async function execute() {
-    const res = await vscode.window.showInputBox({ placeHolder: 'Number of words to generate' });
+    var c = await vscode.window.showInputBox({ ignoreFocusOut, placeHolder: 'Number of words to generate', validateInput });
+    c = parseInt(c);
 
-    const n = parseInt(res);
-    if (!n) return vscode.window.showInformationMessage('You must enter a number of words to generate.');
+    if (!c) return vscode.window.showInformationMessage('You must enter a number of words to generate.');
 
     vscode.window.showInformationMessage('Generating ' + n + ' words...');
 
@@ -17,6 +17,10 @@ async function execute() {
     });
 
     console.log('Generated ' + n + ' words.');
+};
+
+function validateInput(value) {
+    return isNaN(value) ? 'Please enter a number' : null;
 };
 
 module.exports = { name: "generate", execute };
