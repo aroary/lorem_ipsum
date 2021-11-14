@@ -15,6 +15,8 @@ async function execute() {
     editor.edit(edit => {
         edit.insert(editor.selection.active, text);
     });
+
+    console.log('Generated ' + n + ' words.');
 };
 
 module.exports = { name: "generate", execute };

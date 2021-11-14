@@ -6,11 +6,13 @@ const fs = require('fs');
  * @param {vscode.ExtensionContext} context - The context for the extension
  */
 const activate = (context) => {
-    console.log('now active!');
+    console.log('lorem_ipsum extention activating');
 
     fs.readdirSync(__dirname + "/commands", { withFileTypes: true })
         .filter(file => file.name.split`.`.pop() === "js")
         .forEach(file => {
+            console.log(`registering command ${file.name}`);
+
             const command = require(`./commands/${file.name}`);
 
             const disposable = vscode.commands.registerCommand('lorem_ipsum.' + command.name, command.execute);
@@ -18,6 +20,8 @@ const activate = (context) => {
             console.log(command.name);
             context.subscriptions.push(disposable);
         });
+
+    console.log('lorem_ipsum extention activated');
 };
 
 /**
