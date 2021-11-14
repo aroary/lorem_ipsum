@@ -1,9 +1,9 @@
 {
   "name": "loremipsum",
   "displayName": "lorem ipsum",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Add lorem ipsum to your code",
-  "icon": "https://github.com/aroary/lorem_ipsum/blob/main/icon.png",
+  "icon": "icon.png",
   "publisher": "aroary",
   "main": "index.js",
   "scripts": {},
