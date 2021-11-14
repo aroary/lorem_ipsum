@@ -5,7 +5,7 @@ const fs = require('fs');
  * @description this method is called when your extension is activated
  * @param {vscode.ExtensionContext} context - The context for the extension
  */
-const activate = (context) => {
+function activate(context) {
     console.log('lorem_ipsum extention activating');
 
     fs.readdirSync(__dirname + "/commands", { withFileTypes: true })
@@ -27,6 +27,8 @@ const activate = (context) => {
 /**
  * @description this method is called when your extension is deactivated
  */
-function deactivate() { };
+function deactivate() {
+    console.log("lorem_ipsum extention deactivated");
+};
 
 module.exports = { activate, deactivate };
