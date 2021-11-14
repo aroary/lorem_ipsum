@@ -7,7 +7,7 @@
 #### It may also be used to temporarily replace text during development to demonstrate the visual form of a typeface without relying on meaningful content.
 ___
 
->### spotlit contributors
+>### featured contributors
 >- [aroary](https://github.com/aroary)
 >- [SoftwareFuze](https://github.com/SoftwareFuze)
 >- [Proconsulates](https://github.com/Proconsulates)
