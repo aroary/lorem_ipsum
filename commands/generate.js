@@ -7,16 +7,15 @@ async function execute() {
 
     if (!c) return vscode.window.showInformationMessage('You must enter a number of words to generate.');
 
-    vscode.window.showInformationMessage('Generating ' + n + ' words...');
+    vscode.window.showInformationMessage('Generating ' + n + ' words...').then(() => {
+        const editor = vscode.window.activeTextEditor;
+        const text = generate(n);
+        editor.edit(edit => {
+            edit.insert(editor.selection.active, text);
+        });
 
-    // Add the "lorim ipsum" text to the cursor position
-    const editor = vscode.window.activeTextEditor;
-    const text = generate(n);
-    editor.edit(edit => {
-        edit.insert(editor.selection.active, text);
+        console.log('Generated ' + n + ' words.');
     });
-
-    console.log('Generated ' + n + ' words.');
 };
 
 function validateInput(value) {
