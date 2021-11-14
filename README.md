@@ -7,8 +7,9 @@
 #### It may also be used to temporarily replace text during development to demonstrate the visual form of a typeface without relying on meaningful content.
 ___
 
->### Contributors
+>### featured contributors
 >- [aroary](https://github.com/aroary)
 >- [SoftwareFuze](https://github.com/SoftwareFuze)
 >- [Proconsulates](https://github.com/Proconsulates)
 >- [Trainboy137](https://github.com/Trainboy137)
+>- Contributions are welcome!
