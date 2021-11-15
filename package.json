@@ -21,7 +21,9 @@
     "commands": [
       {
         "command": "lorem_ipsum.generate",
-        "title": "Generate Lorem Ipsum"
+        "title": "Generate Lorem Ipsum",
+        "key": "ctrl+l+i",
+        "mac": "cmd+l+i"
       }
     ]
   },
