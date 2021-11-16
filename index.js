@@ -11,14 +11,9 @@ function activate(context) {
     fs.readdirSync(__dirname + "/commands", { withFileTypes: true })
         .filter(file => file.name.split`.`.pop() === "js")
         .forEach(file => {
-            console.log(`registering command ${file.name}`);
-
             const command = require(`./commands/${file.name}`);
-
-            const disposable = vscode.commands.registerCommand('lorem_ipsum.' + command.name, command.execute);
-
-            console.log(command.name);
-            context.subscriptions.push(disposable);
+            console.log(`registering command ${command.name} from ${file.name}`);
+            context.subscriptions.push(vscode.commands.registerCommand('lorem_ipsum.' + command.name, command.execute));
         });
 
     console.log('lorem_ipsum extention activated');
