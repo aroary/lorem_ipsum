@@ -15,15 +15,35 @@
     "vscode": "^1.32.0"
   },
   "activationEvents": [
-    "onCommand:lorem_ipsum.generate"
+    "onCommand:lorem_ipsum.word",
+    "onCommand:lorem_ipsum.sentence",
+    "onCommand:lorem_ipsum.paragraph",
+    "onCommand:lorem_ipsum.page",
+    "onCommand:lorem_ipsum.list"
   ],
   "contributes": {
     "commands": [
       {
-        "command": "lorem_ipsum.generate",
-        "title": "Generate Lorem Ipsum",
+        "command": "lorem_ipsum.word",
+        "title": "Generate Lorem Ipsum (word)",
         "key": "ctrl+l+i",
         "mac": "cmd+l+i"
+      },
+      {
+        "command": "lorem_ipsum.sentence",
+        "title": "Generate Lorem Ipsum (sentance)"
+      },
+      {
+        "command": "lorem_ipsum.paragraph",
+        "title": "Generate Lorem Ipsum (paragraph)"
+      },
+      {
+        "command": "lorem_ipsum.page",
+        "title": "Generate Lorem Ipsum (page)"
+      },
+      {
+        "command": "lorem_ipsum.list",
+        "title": "Generate Lorem Ipsum (list)"
       }
     ]
   },
