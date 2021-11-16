@@ -2,21 +2,16 @@ const words = require('./words.json')
 const randomItem = require('./randomItem');
 
 const generate = (n) => {
-    const generated = [];
+    const generated = "lorem ipsum dolor sit amet consectetur adipisicing elit".split` `;
 
-    for (let i = 0; i < n; i++) {
+    if (n > 8) for (let i = 0; i < n - 8; i++) {
         var word = randomItem(words);
         while (word === generated[i - 1]) word = randomItem(words);
 
-        if (!(((i + 1) / 8) % 1)) word += randomItem(['.', '?', '!']);
-        if (!(((i + 1) / 64) % 1)) word += '\n';
-
         generated.push(word);
-    };
+    } else while (generated[n]) generated.pop();
 
-    const text = generated.join` `.split`\n`.map(v => v.trim()).join`\n`;
-
-    return "lorem ipsum dolor sit amet consectetur adipisicing elit. " + randomItem(words) + text;
+    return generated;
 };
 
 module.exports = generate;
