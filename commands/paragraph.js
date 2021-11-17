@@ -12,7 +12,7 @@ async function execute() {
     };
 
     const editor = vscode.window.activeTextEditor;
-    editor.edit(edit => edit.insert(editor.selection.active, text.join` `.split("\n").map(v => v.trim()).join("\n")));
+    editor.edit(edit => edit.insert(editor.selection.active, text.join` `.split("\n").map(v => v.trim()).join("\n").trim()));
     console.log(`Generated ${count} paragraphs`);
 };
 
