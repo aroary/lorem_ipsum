@@ -2,7 +2,7 @@ const vscode = require('vscode');
 const generate = require("../utilities/lorem_ipsum");
 
 async function execute() {
-    var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of words to generate', validateInput });
+    var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of list items to generate', validateInput });
     count = parseInt(count);
 
     var text = [];
