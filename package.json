@@ -26,25 +26,25 @@
     "commands": [
       {
         "command": "lorem_ipsum.word",
-        "title": "Generate Lorem Ipsum (word)",
+        "title": "Generate word",
         "key": "ctrl+l+i",
         "mac": "cmd+l+i"
       },
       {
         "command": "lorem_ipsum.sentence",
-        "title": "Generate Lorem Ipsum (sentance)"
+        "title": "Generate sentance"
       },
       {
         "command": "lorem_ipsum.paragraph",
-        "title": "Generate Lorem Ipsum (paragraph)"
+        "title": "Generate paragraph"
       },
       {
         "command": "lorem_ipsum.page",
-        "title": "Generate Lorem Ipsum (page)"
+        "title": "Generate page"
       },
       {
         "command": "lorem_ipsum.list",
-        "title": "Generate Lorem Ipsum (list)"
+        "title": "Generate list"
       },
       {
         "command": "lorem_ipsum.contents",
