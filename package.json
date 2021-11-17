@@ -19,7 +19,8 @@
     "onCommand:lorem_ipsum.sentence",
     "onCommand:lorem_ipsum.paragraph",
     "onCommand:lorem_ipsum.page",
-    "onCommand:lorem_ipsum.list"
+    "onCommand:lorem_ipsum.list",
+    "onCommand:lorem_ipsum.contents"
   ],
   "contributes": {
     "commands": [
@@ -44,6 +45,12 @@
       {
         "command": "lorem_ipsum.list",
         "title": "Generate Lorem Ipsum (list)"
+      },
+      {
+        "command": "lorem_ipsum.contents",
+        "title": "Contents count",
+        "key": "ctrl+alt+c",
+        "mac": "cmd+alt+c"
       }
     ]
   },
