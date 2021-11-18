@@ -1,6 +1,7 @@
 # Lorem Ipsum
 ### lorem ipsum generator to generate placeholder text in your code. Quickly insert placeholder text using a simple command.
 ## Capabilities
+- Generate *n* bytes
 - Generate *n* words
 - Generate *n* sentences
 - Generate *n* paragraphs
