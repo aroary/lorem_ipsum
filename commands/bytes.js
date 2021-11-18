@@ -20,6 +20,6 @@ async function execute() {
     console.log(`Generated ${count} bytes`);
 };
 
-const validateInput = value => isNaN(value) ? 'Please enter a number' : null;
+const validateInput = value => isNaN(value) ? 'Please enter a number' : value > 100000 ? 'Number too high' : null;
 
 module.exports = { name: "byte", execute };
