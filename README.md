@@ -31,3 +31,5 @@ ___
 >- [Proconsulates](https://github.com/Proconsulates)
 >- [Trainboy137](https://github.com/Trainboy137)
 >- Contributions are welcome!
+
+![](https://contrib.rocks/image?repo=aroary/lorem_ipsum)
