@@ -1,5 +1,7 @@
 # Lorem Ipsum
 ### lorem ipsum generator to generate placeholder text in your code. Quickly insert placeholder text using a simple command.
+![](https://img.shields.io/visual-studio-marketplace/i/aroary.loremipsum)
+![](https://img.shields.io/github/v/release/aroary/lorem_ipsum)
 ## Capabilities
 - Generate *n* bytes
 - Generate *n* words
