@@ -61,7 +61,9 @@
   },
   "keywords": [
     "lorem",
-    "ipsum"
+    "ipsum",
+    "text",
+    "generator"
   ],
   "author": "aroary",
   "license": "MIT",
