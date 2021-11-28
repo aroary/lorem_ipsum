@@ -20,24 +20,24 @@
     <ul>
         <li><strong>Latin</strong> (lat) <i>default</i></li>
         <li><strong>English</strong> (eng)</li>
-        <li><strong>French</strong> (fre)</li>
-        <li><strong>German</strong> (ger)</li>
+        <!-- <li><strong>French</strong> (fre)</li> -->
+        <!-- <li><strong>German</strong> (ger)</li> -->
         <li><strong>Spanish</strong> (spa)</li>
-        <li><strong>Italian</strong> (ita)</li>
-        <li><strong>Dutch</strong> (dut)</li>
-        <li><strong>Portuguese</strong> (por)</li>
-        <li><strong>Russian</strong> (rus)</li>
-        <li><strong>Polish</strong> (pol)</li>
-        <li><strong>Chinese</strong> (chi)</li>
-        <li><strong>Japanese</strong> (jpn)</li>
-        <li><strong>Korean</strong> (kor)</li>
-        <li><strong>Swedish</strong> (swe)</li>
-        <li><strong>Turkish</strong> (tur)</li>
-        <li><strong>Czech</strong> (cze)</li>
-        <li><strong>Greek</strong> (gre)</li>
-        <li><strong>Hebrew</strong> (heb)</li>
-        <li><strong>Arabic</strong> (ara)</li>
-        <li><strong>Norwegian</strong> (nor)</li>
+        <!-- <li><strong>Italian</strong> (ita)</li> -->
+        <!-- <li><strong>Dutch</strong> (dut)</li> -->
+        <!-- <li><strong>Portuguese</strong> (por)</li> -->
+        <!-- <li><strong>Russian</strong> (rus)</li> -->
+        <!-- <li><strong>Polish</strong> (pol)</li> -->
+        <!-- <li><strong>Chinese</strong> (chi)</li> -->
+        <!-- <li><strong>Japanese</strong> (jpn)</li> -->
+        <!-- <li><strong>Korean</strong> (kor)</li> -->
+        <!-- <li><strong>Swedish</strong> (swe)</li> -->
+        <!-- <li><strong>Turkish</strong> (tur)</li> -->
+        <!-- <li><strong>Czech</strong> (cze)</li> -->
+        <!-- <li><strong>Greek</strong> (gre)</li> -->
+        <!-- <li><strong>Hebrew</strong> (heb)</li> -->
+        <!-- <li><strong>Arabic</strong> (ara)</li> -->
+        <!-- <li><strong>Norwegian</strong> (nor)</li> -->
     </ul>
 </details>
 
@@ -48,4 +48,5 @@ ___
 >- [Proconsulates](https://github.com/Proconsulates)
 >- [Trainboy137](https://github.com/Trainboy137)
 >- Contributions are welcome!
+
 ![](https://contrib.rocks/image?repo=aroary/lorem_ipsum)
