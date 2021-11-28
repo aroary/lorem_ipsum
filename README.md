@@ -1,5 +1,8 @@
 # Lorem Ipsum
 ### lorem ipsum generator to generate placeholder text in your code. Quickly insert placeholder text using a simple command.
+
+![](https://img.shields.io/visual-studio-marketplace/i/aroary.loremipsum)
+![](https://img.shields.io/github/v/release/aroary/lorem_ipsum)
 <br>
 <details open>
     <summary>Capabilities</summary>
@@ -45,3 +48,4 @@ ___
 >- [Proconsulates](https://github.com/Proconsulates)
 >- [Trainboy137](https://github.com/Trainboy137)
 >- Contributions are welcome!
+![](https://contrib.rocks/image?repo=aroary/lorem_ipsum)
