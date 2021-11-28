@@ -24,6 +24,16 @@
     "onCommand:lorem_ipsum.contents"
   ],
   "contributes": {
+    "configuration": {
+      "title": "lorem_ipsum",
+      "properties": {
+        "lorem_ipsum.language": {
+          "type": "string",
+          "default": "lat",
+          "description": "The language to generate lorem ipsum in."
+        }
+      }
+    },
     "commands": [
       {
         "command": "lorem_ipsum.byte",

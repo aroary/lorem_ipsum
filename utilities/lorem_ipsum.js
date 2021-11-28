@@ -5,7 +5,7 @@ const languages = fs.readdirSync(path.join(__dirname, '../languages')).filter(di
 const randomItem = require('./randomItem');
 
 const generate = (n) => {
-    var language = vscode.workspace.getConfiguration('lorem-ipsum').get('language') || 'lat';
+    var language = vscode.workspace.getConfiguration('lorem_ipsum').get('language') || 'lat';
     if (!languages.includes(language)) language = 'lat';
 
     const languageData = require(`../languages/${language}.json`);
