@@ -1,3 +1,11 @@
+// Languages
+const languages = {
+    lat: {
+        start: "lorem ipsum dolor sit amet consectetur adipisicing elit",
+        words: ["maxime", "mollitia", "molestiae", "quas", "vel", "repudiandae", "consequuntur", "voluptatum", "laborum", "numquam", "blanditiis", "harum", "quisquam", "eius", "sed", "odit", "fugiat", "iusto", "fuga", "praesentium", "optio", "eaque", "rerum", "Provident", "similique", "accusantium", "nemo", "autem", "Veritatis", "obcaecati", "tenetur", "iure", "earum", "ut", "molestias", "voluptate", "aliquam", "nihil", "eveniet", "aliquid", "culpa", "officia", "aut", "Impedit", "sit", "quaerat", "nesciunt", "ipsum", "debitis", "reprehenderit", "quia", "quo", "neque", "Ipsa", "eos", "sapiente", "officiis", "at", "excepturi", "expedita", "sint", "Sed", "quibusdam", "recusandae", "alias", "error", "adipisci", "amet", "Perspiciatis", "dolorem", "Officiis", "voluptates", "a", "cumque", "velit", "tempora", "Sit", "fugit", "doloribus", "temporibus", "enim", "commodi", "libero", "magni", "deleniti", "quod", "quam", "hic", "doloremque", "provident", "consectetur", "veniam", "ad", "omnis", "saepe", "voluptas", "pariatur", "est", "explicabo", "dolorum", "eligendi", "cupiditate", "maiores", "labore", "suscipit", "Nulla", "placeat", "Voluptatem", "non", "architecto", "ab", "laudantium", "modi", "minima", "sunt", "esse", "totam", "ratione", "exercitationem", "Possimus", "quis", "quasi", "qui", "corporis"]
+    }
+};
+
 const vscode = require('vscode'); // https://code.visualstudio.com/api/extension-guides/web-extensions#web-extension-main-file
 
 const randomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
@@ -5,9 +13,9 @@ const validateInput = value => isNaN(value) ? 'Please enter a number' : value > 
 
 function generate(n) {
     var language = vscode.workspace.getConfiguration('lorem_ipsum').get('language') || 'lat';
-    if (!languages.includes(language)) language = 'lat';
+    if (!languages[language]) language = 'lat';
 
-    const languageData = require(`../languages/${language}.json`);
+    const languageData = languages[language]
     const generated = languageData.start.split` `;
 
     if (n > 8) for (let i = 0; i < n - 8; i++) {
