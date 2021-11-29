@@ -29,7 +29,7 @@ async function word() {
     console.log(new Date().toISOString(), `Generated ${count} words`);
 };
 
-async function sentance() {
+async function sentence() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of sentences to generate', validateInput });
     count = parseInt(count);
     if (!count) return;
@@ -89,7 +89,14 @@ async function list() {
 
 const validateInput = value => isNaN(value) ? 'Please enter a number' : value > 100000 ? 'Number too high' : null;
 
-const commands = { byte, word, sentance, paragraph, page, list };
+const commands = [
+    { generate: byte, name: "byte" },
+    { generate: word, name: "word" },
+    { generate: sentence, name: "sentence" },
+    { generate: paragraph, name: "paragraph" },
+    { generate: page, name: "page" },
+    { generate: list, name: "list" }
+];
 
 /**
  * @description this method is called when your extension is activated
@@ -97,6 +104,12 @@ const commands = { byte, word, sentance, paragraph, page, list };
  */
 function activate(context) {
     console.log(new Date().toISOString(), 'lorem_ipsum extention activating');
+
+    commands.forEach(command => {
+        console.log(new Date().toISOString(), `registering command ${command.name}`);
+        context.subscriptions.push(vscode.commands.registerCommand('lorem_ipsum.' + command.name, command.generate));
+    });
+
     console.log(new Date().toISOString(), 'lorem_ipsum extention activated');
 };
 
