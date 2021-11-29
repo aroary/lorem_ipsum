@@ -11,7 +11,7 @@ function execute() {
 
     const data = `${editor.document.fileName}\n\twords: ${words}\n\tcharachters: ${chars}\n\tlines: ${lines}`;
     vscode.window.showInformationMessage(data);
-    console.log(data);
+    console.log(new Date().toISOString(), data);
 };
 
 module.exports = { name: "contents", execute };
