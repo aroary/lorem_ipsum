@@ -6,24 +6,25 @@ const fs = require('fs');
  * @param {vscode.ExtensionContext} context - The context for the extension
  */
 function activate(context) {
-    console.log('lorem_ipsum extention activating');
+    console.log(new Date().toISOString(), 'lorem_ipsum extention activating');
 
     fs.readdirSync(__dirname + "/commands", { withFileTypes: true })
         .filter(file => file.name.split`.`.pop() === "js")
         .forEach(file => {
             const command = require(`./commands/${file.name}`);
-            console.log(`registering command ${command.name} from ${file.name}`);
+            console.log(new Date().toISOString(), `registering command ${command.name} from ${file.name}`);
             context.subscriptions.push(vscode.commands.registerCommand('lorem_ipsum.' + command.name, command.execute));
         });
 
-    console.log('lorem_ipsum extention activated');
+    console.log(new Date().toISOString(), 'lorem_ipsum extention activated');
 };
 
 /**
  * @description this method is called when your extension is deactivated
  */
 function deactivate() {
-    console.log("lorem_ipsum extention deactivated");
+    console.log(new Date().toISOString(), "lorem_ipsum extention deactivating");
+    console.log(new Date().toISOString(), "lorem_ipsum extention deactivated");
 };
 
 module.exports = { activate, deactivate };

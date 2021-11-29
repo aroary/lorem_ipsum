@@ -17,7 +17,7 @@ async function execute() {
     const editor = vscode.window.activeTextEditor;
     editor.edit(edit => edit.insert(editor.selection.active, text));
 
-    console.log(`Generated ${count} bytes`);
+    console.log(new Date().toISOString(), `Generated ${count} bytes`);
 };
 
 const validateInput = value => isNaN(value) ? 'Please enter a number' : value > 100000 ? 'Number too high' : null;
