@@ -23,6 +23,7 @@ function activate(context) {
  * @description this method is called when your extension is deactivated
  */
 function deactivate() {
+    console.log(new Date().toISOString(), "lorem_ipsum extention deactivating");
     console.log(new Date().toISOString(), "lorem_ipsum extention deactivated");
 };
 
