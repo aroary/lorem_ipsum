@@ -50,7 +50,7 @@
 </details>
 
 ### Changing the generated language
-#### To change the language open the JSON settings and add the key `lorem_ipsum.language` with the value a string equal to an [ISO 639-2 language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) from the list above. The defualt if no language or an invalid language is provided is *Latin* (lat). If a specific language is not listed above and you would like it to be, feel free to open an issue or pull request.
+#### To change the language open the JSON settings and add the name `lorem_ipsum.language` with the value a string equal to an [ISO 639-2 language code](https://www.loc.gov/standards/iso639-2/php/code_list.php) from the list above. The defualt if no language or an invalid language is provided is *Latin* (lat). If a specific language is not listed above and you would like it to be, feel free to open an issue or pull request.
 ___
 >### featured contributors
 >- [aroary](https://github.com/aroary)
