@@ -1,5 +1,25 @@
 const vscode = require('vscode'); // https://code.visualstudio.com/api/extension-guides/web-extensions#web-extension-main-file
 
+const randomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+const validateInput = value => isNaN(value) ? 'Please enter a number' : value > 100000 ? 'Number too high' : null;
+
+function generate(n) {
+    var language = vscode.workspace.getConfiguration('lorem_ipsum').get('language') || 'lat';
+    if (!languages.includes(language)) language = 'lat';
+
+    const languageData = require(`../languages/${language}.json`);
+    const generated = languageData.start.split` `;
+
+    if (n > 8) for (let i = 0; i < n - 8; i++) {
+        var word = randomItem(languageData.words);
+        while (word === generated[i - 1]) word = randomItem(languageData.words);
+
+        generated.push(word);
+    } else while (generated[n]) generated.pop();
+
+    return generated;
+};
+
 async function byte() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of bytes to generate', validateInput });
     count = parseInt(count);
@@ -87,8 +107,6 @@ async function list() {
     console.log(new Date().toISOString(), `Generated ${count} list items`);
 };
 
-const validateInput = value => isNaN(value) ? 'Please enter a number' : value > 100000 ? 'Number too high' : null;
-
 const commands = [
     { generate: byte, name: "byte" },
     { generate: word, name: "word" },
@@ -120,6 +138,5 @@ function deactivate() {
     console.log(new Date().toISOString(), "lorem_ipsum extention deactivating");
     console.log(new Date().toISOString(), "lorem_ipsum extention deactivated");
 };
-
 
 module.exports = { activate, deactivate }; // https://code.visualstudio.com/api/extension-guides/web-extensions#web-extension-main-file
