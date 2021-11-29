@@ -1,4 +1,4 @@
-const vscode = require('vscode');
+const vscode = require('vscode'); // https://code.visualstudio.com/api/extension-guides/web-extensions#web-extension-main-file
 
 /**
  * @description this method is called when your extension is activated
@@ -17,4 +17,4 @@ function deactivate() {
     console.log(new Date().toISOString(), "lorem_ipsum extention deactivated");
 };
 
-module.exports = { activate, deactivate };
+module.exports = { activate, deactivate }; // https://code.visualstudio.com/api/extension-guides/web-extensions#web-extension-main-file
