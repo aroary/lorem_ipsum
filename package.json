@@ -6,6 +6,7 @@
   "icon": "icon.png",
   "publisher": "aroary",
   "main": "index.js",
+  "browser": "browser.js",
   "scripts": {},
   "repository": {
     "type": "git",
