@@ -1,5 +1,6 @@
 | release date | version | description |
 |:---:|:---:|---|
+| 11/30/21 | v1.2.2 | Optional laguage setting added |
 | 11/18/21 | v1.1.2 | Input context fixed |
 | 11/16/21 | v1.1.1 | Major commands added |
 | 11/13/21 | v1.0.1 | Small bug fixes |
