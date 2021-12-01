@@ -1,12 +1,12 @@
-## commands
+# Commands
 
-###### Template code for a command
+#### Template code for adding commands (`./NAME.js`):
 ```js
 const vscode = require('vscode');
 
 function execute() {
-    // Code
+    // CODE
 };
 
-module.exports = { name: "generate", execute };
+module.exports = { name: "NAME", execute };
 ```
