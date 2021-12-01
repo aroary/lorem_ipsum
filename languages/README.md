@@ -1,11 +1,12 @@
 # Languages
-### Template for adding a new language:
+### Template for adding a new language (`./CODE.json`):
 ```json
 {
     "start": "",
     "words": []
 }
 ```
+##### [ISO 639-2 Language Code List - Codes for the representation of names of languages (Library of Congress)](https://www.loc.gov/standards/iso639-2/php/code_list.php)
 ### Supported languages:
 |Code|Language|Supported|Preview|
 |-:|:-|-:|:-|
