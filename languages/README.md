@@ -7,7 +7,7 @@
 }
 ```
 ### Supported languages:
-|code|Language|Supported|Preview|
+|Code|Language|Supported|Preview|
 |-:|:-|-:|:-|
 |ara|Arabic|❌||
 |chi|Chinese|❌||
