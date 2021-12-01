@@ -46,7 +46,7 @@
         <!-- <li><strong>Arabic</strong> (ara)</li> -->
         <!-- <li><strong>Norwegian</strong> (nor)</li> -->
     </ul>
-    <h3>Feel free to create an issue or a pull request to add a language that is not listed here.</h3>
+    <h3>Feel free to create an <a href="https://github.com/aroary/lorem_ipsum/issues">issue</a> or a <a href="https://github.com/aroary/lorem_ipsum/pulls">pull request</a> to add a language that is not listed here. More information about language support can be found in <a href="https://github.com/aroary/lorem_ipsum/tree/main/languages/README.md">./languages/README.md</a></h3>
 </details>
 
 ### Changing the generated language
