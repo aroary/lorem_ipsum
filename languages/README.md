@@ -10,7 +10,7 @@
 ### Supported languages:
 |Code|Language|Supported|Preview|
 |-:|:-|-:|:-|
-|ara|Arabic|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|ara|Arabic|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/ara.json)|السيارة نفسها تتألم|
 |chi|Chinese|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*Looking for human translator*|
 |cze|Czech|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
 |dut|Dutch|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
