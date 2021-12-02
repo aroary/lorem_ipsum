@@ -18,7 +18,7 @@
 |fre|French|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
 |ger|German|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
 |gre|Greek|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
-|heb|Hebrew|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|heb|Hebrew|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/heb.json)|הרכב עצמו כואב|
 |ita|Italian|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
 |jpn|Japanese|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
 |kor|Korean|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
