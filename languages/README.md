@@ -12,7 +12,7 @@
 |-:|:-|-:|:-|
 |ara|Arabic|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/ara.json)|السيارة نفسها تتألم|
 |chi|Chinese|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*Looking for human translator*|
-|cze|Czech|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|cze|Czech|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/cze.json)|samotné vozidlo je bolest|
 |dut|Dutch|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
 |eng|English|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/eng.json)|the vehicle itself is pain|
 |fre|French|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/fre.json)|le véhicule lui-même est douloureux|
@@ -23,10 +23,10 @@
 |jpn|Japanese|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
 |kor|Korean|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
 |lat|Latin|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/lat.json)|lorem ipsum dolor sit amet consectetur adipisicing elit|
-|nor|Norwegian|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|nor|Norwegian|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/nor.json)|kjøretøyet i seg selv er smertefullt|
 |pol|Polish|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
 |por|Portuguese|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
-|rus|Russian|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|rus|Russian|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/rus.json)|сам автомобиль - это боль|
 |spa|Spanish|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/spa.json)|el vehículo en sí es doloroso|
 |swe|Swedish|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
 |tur|Turkish|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
