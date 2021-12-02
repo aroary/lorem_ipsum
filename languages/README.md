@@ -10,26 +10,26 @@
 ### Supported languages:
 |Code|Language|Supported|Preview|
 |-:|:-|-:|:-|
-|ara|Arabic|❌||
-|chi|Chinese|❌||
-|cze|Czech|❌||
-|dut|Dutch|❌||
-|eng|English|✔️|the vehicle itself is pain|
-|fre|French|❌||
-|ger|German|❌||
-|gre|Greek|❌||
-|heb|Hebrew|❌||
-|ita|Italian|❌||
-|jpn|Japanese|❌||
-|kor|Korean|❌||
-|lat|Latin|✔️|lorem ipsum dolor sit amet consectetur adipisicing elit|
-|nor|Norwegian|❌||
-|pol|Polish|❌||
-|por|Portuguese|❌||
-|rus|Russian|❌||
-|spa|Spanish|✔️|el vehículo en sí es doloroso|
-|swe|Swedish|❌||
-|tur|Turkish|❌||
+|ara|Arabic|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|chi|Chinese|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|cze|Czech|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|dut|Dutch|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|eng|English|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/eng.json)|the vehicle itself is pain|
+|fre|French|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|ger|German|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|gre|Greek|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|heb|Hebrew|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|ita|Italian|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|jpn|Japanese|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|kor|Korean|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|lat|Latin|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/lat.json)|lorem ipsum dolor sit amet consectetur adipisicing elit|
+|nor|Norwegian|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|pol|Polish|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|por|Portuguese|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|rus|Russian|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|spa|Spanish|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/spa.json)|el vehículo en sí es doloroso|
+|swe|Swedish|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|tur|Turkish|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
 #### If a language is not here it may not ever be added, to request or add a language create an [issue](https://github.com/aroary/lorem_ipsum/issues) or a [pull request](https://github.com/aroary/lorem_ipsum/pulls). If a language is here and is not at all supported, it may be supported in a future version.
 ### Words are translated from these Latin words:
 ```txt
