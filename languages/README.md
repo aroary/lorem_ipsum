@@ -11,25 +11,25 @@
 |Code|Language|Supported|Preview|
 |-:|:-|-:|:-|
 |ara|Arabic|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/ara.json)|السيارة نفسها تتألم|
-|chi|Chinese|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*Looking for human translator*|
+|chi|Chinese|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language&body=Chinese)|*Looking for human translator*|
 |cze|Czech|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/cze.json)|samotné vozidlo je bolest|
-|dut|Dutch|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|dut|Dutch|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language&body=Dutch)|*coming soon*|
 |eng|English|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/eng.json)|the vehicle itself is pain|
 |fre|French|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/fre.json)|le véhicule lui-même est douloureux|
 |ger|German|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/ger.json)|das fahrzeug selbst schmerzt|
-|gre|Greek|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|gre|Greek|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language&body=Greek)|*coming soon*|
 |heb|Hebrew|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/heb.json)|הרכב עצמו כואב|
-|ita|Italian|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
-|jpn|Japanese|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
-|kor|Korean|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|ita|Italian|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language&body=Italian)|*coming soon*|
+|jpn|Japanese|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language&body=Japanese)|*coming soon*|
+|kor|Korean|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language&body=Korean)|*coming soon*|
 |lat|Latin|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/lat.json)|lorem ipsum dolor sit amet consectetur adipisicing elit|
 |nor|Norwegian|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/nor.json)|kjøretøyet i seg selv er smertefullt|
-|pol|Polish|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
-|por|Portuguese|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|pol|Polish|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language&body=Polish)|*coming soon*|
+|por|Portuguese|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language&body=Portaguese)|*coming soon*|
 |rus|Russian|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/rus.json)|сам автомобиль - это боль|
 |spa|Spanish|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/spa.json)|el vehículo en sí es doloroso|
-|swe|Swedish|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
-|tur|Turkish|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|swe|Swedish|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language&body=Swedish)|*coming soon*|
+|tur|Turkish|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language&body=Turkish)|*coming soon*|
 #### If a language is not here it may not ever be added, to request or add a language create an [issue](https://github.com/aroary/lorem_ipsum/issues) or a [pull request](https://github.com/aroary/lorem_ipsum/pulls). If a language is here and is not at all supported, it may be supported in a future version.
 ### Words are translated from these Latin words:
 ```txt
