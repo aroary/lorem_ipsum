@@ -11,7 +11,7 @@
 |Code|Language|Supported|Preview|
 |-:|:-|-:|:-|
 |ara|Arabic|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
-|chi|Chinese|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
+|chi|Chinese|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*Looking for human translator*|
 |cze|Czech|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
 |dut|Dutch|[❌](https://github.com/aroary/lorem_ipsum/issues/new?title=language)|*coming soon*|
 |eng|English|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/eng.json)|the vehicle itself is pain|
