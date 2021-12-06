@@ -2,9 +2,10 @@
 name: Add Language
 about: For adding support for a new language
 title: Language
-labels: ''
+labels: Language
 assignees: ''
 
 ---
 
-#### I want [language] to be supported because [reason].
+## [LANGUAGE]
+#### I want [LANGUAGE] to be supported because [REASON].
