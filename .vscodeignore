@@ -1,0 +1,16 @@
+# Special files
+.github
+.gitignore
+.vscodeignore
+
+# Documentation files
+*.txt
+commands/README.md
+languages/README.md
+
+# Todo files
+todo
+
+# Prevent js and json files from being ignored
+!*.js
+!*.json
