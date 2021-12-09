@@ -103,5 +103,12 @@ dist
 # TernJS port file
 .tern-port
 
-# Web Extention debugger files
+# Todo files
+todo
+todo.*
+
+# Test files
 .vscode-test-web/
+
+# Build artifacts
+**/*.vsix
