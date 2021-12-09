@@ -109,3 +109,6 @@ todo.*
 
 # Test files
 .vscode-test-web/
+
+# Build artifacts
+**/*.vsix
