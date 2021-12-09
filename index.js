@@ -1,3 +1,9 @@
+/*******************************************************
+ * @file lorem ipsum extension for visual studios code *
+ * @copyright (c) 2021 aroary                          *
+ * @license MIT                                        *
+ *******************************************************/
+
 const vscode = require('vscode');
 const fs = require('fs');
 
