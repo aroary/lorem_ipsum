@@ -41,33 +41,33 @@
     "commands": [
       {
         "command": "lorem_ipsum.byte",
-        "title": "Generate bytes"
+        "title": "lorem ipsum Generate bytes"
       },
       {
         "command": "lorem_ipsum.word",
-        "title": "Generate word",
+        "title": "lorem ipsum Generate word",
         "key": "ctrl+l+i",
         "mac": "cmd+l+i"
       },
       {
         "command": "lorem_ipsum.sentence",
-        "title": "Generate sentance"
+        "title": "lorem ipsum Generate sentance"
       },
       {
         "command": "lorem_ipsum.paragraph",
-        "title": "Generate paragraph"
+        "title": "lorem ipsum Generate paragraph"
       },
       {
         "command": "lorem_ipsum.page",
-        "title": "Generate page"
+        "title": "lorem ipsum Generate page"
       },
       {
         "command": "lorem_ipsum.list",
-        "title": "Generate list"
+        "title": "lorem ipsum Generate list"
       },
       {
         "command": "lorem_ipsum.contents",
-        "title": "Contents count",
+        "title": "lorem ipsum Contents count",
         "key": "ctrl+alt+c",
         "mac": "cmd+alt+c"
       }
