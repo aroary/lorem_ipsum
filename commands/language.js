@@ -14,4 +14,4 @@ async function execute() {
 
 };
 
-module.exports = { name: "NAME", execute };
+module.exports = { name: "language", execute };
