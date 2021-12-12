@@ -25,7 +25,8 @@
     "onCommand:lorem_ipsum.paragraph",
     "onCommand:lorem_ipsum.page",
     "onCommand:lorem_ipsum.list",
-    "onCommand:lorem_ipsum.contents"
+    "onCommand:lorem_ipsum.contents",
+    "onCommand:lorem_ipsum.language"
   ],
   "contributes": {
     "configuration": {
@@ -70,6 +71,10 @@
         "title": "lorem ipsum Contents count",
         "key": "ctrl+alt+c",
         "mac": "cmd+alt+c"
+      },
+      {
+        "command": "lorem_ipsum.language",
+        "title": "Change lorem ipsum language"
       }
     ]
   },
