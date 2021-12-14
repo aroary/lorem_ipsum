@@ -33,7 +33,10 @@
       "title": "lorem_ipsum",
       "properties": {
         "lorem_ipsum.language": {
-          "type": "string",
+          "type": [
+            "string",
+            "array"
+          ],
           "default": "lat",
           "description": "The language to generate lorem ipsum in."
         }
