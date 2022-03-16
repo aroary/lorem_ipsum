@@ -33,9 +33,29 @@
       "title": "lorem_ipsum",
       "properties": {
         "lorem_ipsum.language": {
+          "scope": "window",
           "type": "string",
           "default": "lat",
-          "description": "The language to generate lorem ipsum in."
+          "minLength": 3,
+          "maxLength": 3,
+          "description": "The language to generate text in."
+        },
+        "lorem_ipsum.language.custom": {
+          "scope": "window",
+          "type": "array",
+          "default": [
+            "lorem",
+            "ipsum",
+            "dolor",
+            "sit",
+            "amet",
+            "consectetur",
+            "adipisicing",
+            "elit"
+          ],
+          "minItems": 8,
+          "maxItems": 100,
+          "description": "Custom text to generate."
         }
       }
     },
@@ -68,9 +88,7 @@
       },
       {
         "command": "lorem_ipsum.contents",
-        "title": "lorem ipsum Contents count",
-        "key": "ctrl+alt+c",
-        "mac": "cmd+alt+c"
+        "title": "lorem ipsum Contents count"
       },
       {
         "command": "lorem_ipsum.language",

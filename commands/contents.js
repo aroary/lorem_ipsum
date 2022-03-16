@@ -9,7 +9,7 @@ function execute() {
     const chars = text.length;
     const lines = editor.document.lineCount;
 
-    const data = `${editor.document.fileName}\n\twords: ${words}\n\tcharachters: ${chars}\n\tlines: ${lines}`;
+    const data = `${editor.document.fileName} ${text.length ? `words: ${words}, charachters: ${chars}, lines: ${lines}` : "empty file"}`;
     vscode.window.showInformationMessage(data);
     console.log(new Date().toISOString(), data);
 };

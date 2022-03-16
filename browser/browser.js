@@ -27,12 +27,15 @@ const validateInput = value => isNaN(value) ? 'Please enter a number' : value > 
 
 function generate(n) {
     var language = vscode.workspace.getConfiguration('lorem_ipsum').get('language') || 'lat';
-    if (!languages[language]) language = 'lat';
+    var languageData;
 
-    const languageData = languages[language];
+    if (language === "ctm") languageData = vscode.workspace.getConfiguration('lorem_ipsum').get('language.custom');
+    else if (!languages.includes(language)) language = 'lat';
+
+    if (!languageData) languageData = require(`../languages/${language}.json`);
     const generated = languageData.start.split` `;
 
-    if (n > 8) for (let i = 0; i < n - 8; i++) {
+    if (n > generated.length) for (let i = 0; i < n - 8; i++) {
         var word = randomItem(languageData.words);
         while (word === generated[i - 1]) word = randomItem(languageData.words);
 
