@@ -1,6 +1,6 @@
 # Lorem Ipsum
-## (Contributers are welcome)
-### lorem ipsum generator to generate placeholder text in your code. Quickly insert placeholder text using a simple command.
+###### (Contributers are welcome)
+### lorem ipsum generator to generate placeholder text in your code. Quickly insert placeholder text using a simple command. [Wiki](https://github.com/aroary/lorem_ipsum/wiki)
 ![](https://img.shields.io/visual-studio-marketplace/i/aroary.loremipsum)
 ![](https://img.shields.io/github/v/release/aroary/lorem_ipsum)
 #### Capabilities:
