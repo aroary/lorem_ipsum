@@ -16,7 +16,7 @@ async function execute() {
 
     const editor = vscode.window.activeTextEditor;
     editor.edit(edit => edit.insert(editor.selection.active, text.join` `.split("\n").map(v => v.trim()).join("\n").trim()));
-    console.log(new Date().toISOString(), 'Generated ', count, ' pages');
+    console.log(new Date().toISOString(), 'Generated', count, 'pages');
 };
 
 const validateInput = value => isNaN(value) ? 'Please enter a number' : value > 100000 ? 'Number too high' : null;
