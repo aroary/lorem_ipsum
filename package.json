@@ -33,7 +33,7 @@
       "title": "lorem_ipsum",
       "properties": {
         "lorem_ipsum.language": {
-          "scope": "application",
+          "scope": "window",
           "type": "string",
           "default": "lat",
           "minLength": 3,
@@ -41,7 +41,7 @@
           "description": "The language to generate text in."
         },
         "lorem_ipsum.language.custom": {
-          "scope": "application",
+          "scope": "window",
           "type": "array",
           "default": [
             "lorem",
