@@ -2,6 +2,8 @@
 ## Supported Versions
 version|Supported|
 |:-|:-:|
+|Latest|✔️|
+|v1.3.3|✔️|
 |v1.3.2|✔️|
 |v1.2.2|✔️|
 |v1.1.2|✔️|
