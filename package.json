@@ -25,6 +25,7 @@
     "onCommand:lorem_ipsum.paragraph",
     "onCommand:lorem_ipsum.page",
     "onCommand:lorem_ipsum.list",
+    "onCommand:lorem_ipsum.image",
     "onCommand:lorem_ipsum.contents",
     "onCommand:lorem_ipsum.language"
   ],
@@ -62,37 +63,55 @@
     "commands": [
       {
         "command": "lorem_ipsum.byte",
-        "title": "lorem ipsum Generate bytes"
+        "title": "lorem ipsum Generate bytes",
+        "category": "generate",
+        "icon": "icon.png"
       },
       {
         "command": "lorem_ipsum.word",
         "title": "lorem ipsum Generate word",
-        "key": "ctrl+l+i",
-        "mac": "cmd+l+i"
+        "category": "generate",
+        "icon": "icon.png"
       },
       {
         "command": "lorem_ipsum.sentence",
-        "title": "lorem ipsum Generate sentance"
+        "title": "lorem ipsum Generate sentance",
+        "category": "generate",
+        "icon": "icon.png"
       },
       {
         "command": "lorem_ipsum.paragraph",
-        "title": "lorem ipsum Generate paragraph"
+        "title": "lorem ipsum Generate paragraph",
+        "category": "generate",
+        "icon": "icon.png"
       },
       {
         "command": "lorem_ipsum.page",
-        "title": "lorem ipsum Generate page"
+        "title": "lorem ipsum Generate page",
+        "category": "generate",
+        "icon": "icon.png"
       },
       {
         "command": "lorem_ipsum.list",
-        "title": "lorem ipsum Generate list"
+        "title": "lorem ipsum Generate list",
+        "category": "generate",
+        "icon": "icon.png"
+      },
+      {
+        "command": "lorem_ipsum.image",
+        "title": "lorem ipsum Generate image",
+        "category": "generate",
+        "icon": "icon.png"
       },
       {
         "command": "lorem_ipsum.contents",
-        "title": "lorem ipsum Contents count"
+        "title": "lorem ipsum Contents count",
+        "icon": "icon.png"
       },
       {
         "command": "lorem_ipsum.language",
-        "title": "Change lorem ipsum language"
+        "title": "Change lorem ipsum language",
+        "icon": "icon.png"
       }
     ]
   },
@@ -109,8 +128,11 @@
   },
   "homepage": "https://github.com/aroary/lorem_ipsum#readme",
   "devDependencies": {
-    "vscode": "^1.1.37",
-    "@vscode/test-web": "*"
+    "@vscode/test-web": "*",
+    "electron-rebuild": "^3.2.7",
+    "vscode": "^0.9.9"
   },
-  "dependencies": {}
+  "dependencies": {
+    "canvas": "^2.9.1"
+  }
 }
