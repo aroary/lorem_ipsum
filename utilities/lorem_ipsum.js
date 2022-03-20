@@ -9,9 +9,8 @@ const generate = (n) => {
     var languageData;
 
     if (language === "ctm") languageData = vscode.workspace.getConfiguration('lorem_ipsum').get('language.custom');
-    else if (!languages.includes(language)) language = 'lat';
+    else languageData = require(`../languages/${languages.includes(language) ? language : 'lat'}.json`);
 
-    if (!languageData) languageData = require(`../languages/${language}.json`);
     const generated = languageData.start.split` `;
 
     if (n > generated.length) for (let i = 0; i < n - 8; i++) {
