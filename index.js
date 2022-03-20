@@ -16,7 +16,7 @@ function activate(context) {
 
     fs.readdirSync(__dirname + "/commands").filter(file => file.split`.`.pop() === "js").forEach(file => {
         const command = require(`./commands/${file}`);
-        console.log(new Date().toISOString(), `registering command ${command.name} from ${file.name}`);
+        console.log(new Date().toISOString(), `registering command ${command.name} from ${file}`);
         context.subscriptions.push(vscode.commands.registerCommand('lorem_ipsum.' + command.name, command.execute));
     });
 
