@@ -9,7 +9,8 @@
   "browser": "browser/browser.js",
   "scripts": {
     "start": "vscode-test-web --extensionDevelopmentPath=. .",
-    "package": "vsce package"
+    "package": "vsce package",
+    "rebuild": ".\\node_modules\\.bin\\electron-rebuild.cmd"
   },
   "repository": {
     "type": "git",
