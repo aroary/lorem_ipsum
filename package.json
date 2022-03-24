@@ -130,10 +130,10 @@
   "homepage": "https://github.com/aroary/lorem_ipsum#readme",
   "devDependencies": {
     "@vscode/test-web": "*",
-    "electron-rebuild": "^3.2.7",
-    "vscode": "^1.1.37"
+    "electron-rebuild": "^3.2.7"
   },
   "dependencies": {
+    "@types/vscode": "^1.65.0",
     "canvas": "^2.9.1"
   }
 }
