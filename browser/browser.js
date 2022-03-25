@@ -146,22 +146,22 @@ const commands = [
  * @param {vscode.ExtensionContext} context - The context for the extension
  */
 function activate(context) {
-    console.log(new Date().toISOString(), 'lorem_ipsum extention activating');
+    console.log(new Date().toISOString(), 'lorem_ipsum extension activating');
 
     commands.forEach(command => {
         console.log(new Date().toISOString(), `registering command ${command.name}`);
         context.subscriptions.push(vscode.commands.registerCommand('lorem_ipsum.' + command.name, command.generate));
     });
 
-    console.log(new Date().toISOString(), 'lorem_ipsum extention activated');
+    console.log(new Date().toISOString(), 'lorem_ipsum extension activated');
 };
 
 /**
  * @description this method is called when your extension is deactivated
  */
 function deactivate() {
-    console.log(new Date().toISOString(), "lorem_ipsum extention deactivating");
-    console.log(new Date().toISOString(), "lorem_ipsum extention deactivated");
+    console.log(new Date().toISOString(), "lorem_ipsum extension deactivating");
+    console.log(new Date().toISOString(), "lorem_ipsum extension deactivated");
 };
 
 module.exports = { activate, deactivate }; // https://code.visualstudio.com/api/extension-guides/web-extensions#web-extension-main-file
