@@ -9,8 +9,7 @@
   "browser": "browser/browser.js",
   "scripts": {
     "start": "vscode-test-web --extensionDevelopmentPath=. .",
-    "package": "vsce package",
-    "rebuild": ".\\node_modules\\.bin\\electron-rebuild.cmd"
+    "package": "vsce package"
   },
   "repository": {
     "type": "git",
@@ -130,10 +129,7 @@
   "homepage": "https://github.com/aroary/lorem_ipsum#readme",
   "devDependencies": {
     "@types/vscode": "^1.65.0",
-    "@vscode/test-web": "*",
-    "electron-rebuild": "^3.2.7"
+    "@vscode/test-web": "*"
   },
-  "dependencies": {
-    "canvas": "^2.9.1"
-  }
+  "dependencies": {}
 }
