@@ -9,8 +9,7 @@
   "browser": "browser/browser.js",
   "scripts": {
     "start": "vscode-test-web --extensionDevelopmentPath=. .",
-    "package": "vsce package",
-    "build": "vsce package"
+    "package": "vsce package"
   },
   "repository": {
     "type": "git",
