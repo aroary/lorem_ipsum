@@ -8,6 +8,9 @@
 commands/README.md
 languages/README.md
 
+# .vscode configurations
+.vscode/
+
 # Todo files
 todo
 
