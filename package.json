@@ -35,14 +35,6 @@
       "properties": {
         "lorem_ipsum.language": {
           "scope": "window",
-          "type": "string",
-          "default": "lat",
-          "minLength": 3,
-          "maxLength": 3,
-          "description": "The language to generate text in."
-        },
-        "lorem_ipsum.language.custom": {
-          "scope": "window",
           "type": "array",
           "default": [
             "lorem",
@@ -166,7 +158,7 @@
       },
       {
         "command": "lorem_ipsum.language",
-        "title": "Change lorem ipsum language",
+        "title": "Downlaod and change lorem ipsum language",
         "icon": "icon.png"
       }
     ]
@@ -188,6 +180,7 @@
     "@vscode/test-web": "*"
   },
   "dependencies": {
+    "path": "^0.12.7",
     "sharp": "^0.30.3"
   }
 }
