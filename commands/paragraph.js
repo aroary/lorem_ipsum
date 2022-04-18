@@ -7,7 +7,7 @@ async function execute() {
 
     var text = [];
     for (let j = 0; j < count; j++) {
-        for (let i = 0; i < Math.floor(Math.random() * 3) + 5; i++) text.push(generate(Math.floor(Math.random() * 6) + 16).slice(8).join` ` + ".");
+        for (let i = 0; i < Math.floor(Math.random() * 3) + 5; i++) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
         text.push("\n");
     };
 

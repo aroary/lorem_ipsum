@@ -6,7 +6,7 @@ async function execute() {
     count = parseInt(count);
 
     var text = [];
-    while (text.length < count) text.push(generate(Math.floor(Math.random() * 6) + 16).slice(8).join` ` + ".");
+    while (text.length < count) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
 
     const editor = vscode.window.activeTextEditor;
     editor.edit(edit => edit.insert(editor.selection.active, text.join`\n`));
