@@ -27,12 +27,15 @@ const validateInput = value => isNaN(value) ? 'Please enter a number' : value > 
 
 function generate(n) {
     var language = vscode.workspace.getConfiguration('lorem_ipsum').get('language') || 'lat';
-    if (!languages[language]) language = 'lat';
+    var languageData;
 
-    const languageData = languages[language];
+    if (language === "ctm") languageData = vscode.workspace.getConfiguration('lorem_ipsum').get('language.custom');
+    else if (!languages.includes(language)) language = 'lat';
+
+    if (!languageData) languageData = require(`../languages/${language}.json`);
     const generated = languageData.start.split` `;
 
-    if (n > 8) for (let i = 0; i < n - 8; i++) {
+    if (n > generated.length) for (let i = 0; i < n - 8; i++) {
         var word = randomItem(languageData.words);
         while (word === generated[i - 1]) word = randomItem(languageData.words);
 
@@ -143,22 +146,22 @@ const commands = [
  * @param {vscode.ExtensionContext} context - The context for the extension
  */
 function activate(context) {
-    console.log(new Date().toISOString(), 'lorem_ipsum extention activating');
+    console.log(new Date().toISOString(), 'lorem_ipsum extension activating');
 
     commands.forEach(command => {
         console.log(new Date().toISOString(), `registering command ${command.name}`);
         context.subscriptions.push(vscode.commands.registerCommand('lorem_ipsum.' + command.name, command.generate));
     });
 
-    console.log(new Date().toISOString(), 'lorem_ipsum extention activated');
+    console.log(new Date().toISOString(), 'lorem_ipsum extension activated');
 };
 
 /**
  * @description this method is called when your extension is deactivated
  */
 function deactivate() {
-    console.log(new Date().toISOString(), "lorem_ipsum extention deactivating");
-    console.log(new Date().toISOString(), "lorem_ipsum extention deactivated");
+    console.log(new Date().toISOString(), "lorem_ipsum extension deactivating");
+    console.log(new Date().toISOString(), "lorem_ipsum extension deactivated");
 };
 
 module.exports = { activate, deactivate }; // https://code.visualstudio.com/api/extension-guides/web-extensions#web-extension-main-file

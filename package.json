@@ -1,7 +1,7 @@
 {
   "name": "loremipsum",
   "displayName": "lorem ipsum",
-  "version": "1.3.2",
+  "version": "2.0.0",
   "description": "Add lorem ipsum to your code",
   "icon": "icon.png",
   "publisher": "aroary",
@@ -16,7 +16,7 @@
     "url": "git+https://github.com/aroary/lorem_ipsum.git"
   },
   "engines": {
-    "vscode": "^1.32.0"
+    "vscode": "^1.66.0"
   },
   "activationEvents": [
     "onCommand:lorem_ipsum.byte",
@@ -25,6 +25,7 @@
     "onCommand:lorem_ipsum.paragraph",
     "onCommand:lorem_ipsum.page",
     "onCommand:lorem_ipsum.list",
+    "onCommand:lorem_ipsum.image",
     "onCommand:lorem_ipsum.contents",
     "onCommand:lorem_ipsum.language"
   ],
@@ -33,48 +34,140 @@
       "title": "lorem_ipsum",
       "properties": {
         "lorem_ipsum.language": {
+          "scope": "window",
           "type": "string",
           "default": "lat",
-          "description": "The language to generate lorem ipsum in."
+          "minLength": 3,
+          "maxLength": 3,
+          "description": "The language to generate text in."
+        },
+        "lorem_ipsum.language.custom": {
+          "scope": "window",
+          "type": "array",
+          "default": [
+            "lorem",
+            "ipsum",
+            "dolor",
+            "sit",
+            "amet",
+            "consectetur",
+            "adipisicing",
+            "elit"
+          ],
+          "minItems": 8,
+          "maxItems": 100,
+          "description": "Custom text to generate."
+        },
+        "lorem_ipsum.image": {
+          "scope": "window",
+          "type": "string",
+          "default": "png",
+          "enum": [
+            "png",
+            "jpeg",
+            "gif",
+            "webp",
+            "tiff",
+            "avif"
+          ],
+          "description": "The image format to generate."
+        },
+        "lorem_ipsum.image.output": {
+          "scope": "window",
+          "type": "string",
+          "default": "./",
+          "description": "Output folder for the image."
+        },
+        "lorem_ipsum.image.width": {
+          "scope": "window",
+          "type": "number",
+          "default": 500,
+          "minimum": 100,
+          "maximum": 1000,
+          "description": "The width of the image."
+        },
+        "lorem_ipsum.image.height": {
+          "scope": "window",
+          "type": "number",
+          "default": 500,
+          "minimum": 100,
+          "maximum": 1000,
+          "description": "The height of the image."
+        },
+        "lorem_ipsum.image.lines": {
+          "scope": "window",
+          "type": "number",
+          "default": 4,
+          "minimum": 2,
+          "maximum": 6,
+          "description": "The amount of lines of text within the image."
+        },
+        "lorem_ipsum.image.fontFamily": {
+          "scope": "window",
+          "type": "string",
+          "default": "ariel",
+          "description": "The font family of the text within the image."
+        },
+        "lorem_ipsum.image.background": {
+          "scope": "window",
+          "type": "string",
+          "default": "transparent",
+          "description": "The gradiant colors for the background"
         }
       }
     },
     "commands": [
       {
         "command": "lorem_ipsum.byte",
-        "title": "lorem ipsum Generate bytes"
+        "title": "lorem ipsum Generate bytes",
+        "category": "generate",
+        "icon": "icon.png"
       },
       {
         "command": "lorem_ipsum.word",
         "title": "lorem ipsum Generate word",
-        "key": "ctrl+l+i",
-        "mac": "cmd+l+i"
+        "category": "generate",
+        "icon": "icon.png"
       },
       {
         "command": "lorem_ipsum.sentence",
-        "title": "lorem ipsum Generate sentance"
+        "title": "lorem ipsum Generate sentance",
+        "category": "generate",
+        "icon": "icon.png"
       },
       {
         "command": "lorem_ipsum.paragraph",
-        "title": "lorem ipsum Generate paragraph"
+        "title": "lorem ipsum Generate paragraph",
+        "category": "generate",
+        "icon": "icon.png"
       },
       {
         "command": "lorem_ipsum.page",
-        "title": "lorem ipsum Generate page"
+        "title": "lorem ipsum Generate page",
+        "category": "generate",
+        "icon": "icon.png"
       },
       {
         "command": "lorem_ipsum.list",
-        "title": "lorem ipsum Generate list"
+        "title": "lorem ipsum Generate list",
+        "category": "generate",
+        "icon": "icon.png"
+      },
+      {
+        "command": "lorem_ipsum.image",
+        "title": "lorem ipsum Generate image",
+        "category": "generate",
+        "icon": "icon.png"
       },
       {
         "command": "lorem_ipsum.contents",
         "title": "lorem ipsum Contents count",
-        "key": "ctrl+alt+c",
-        "mac": "cmd+alt+c"
+        "icon": "icon.png"
       },
       {
         "command": "lorem_ipsum.language",
-        "title": "Change lorem ipsum language"
+        "title": "Change lorem ipsum language",
+        "icon": "icon.png"
       }
     ]
   },
@@ -91,8 +184,10 @@
   },
   "homepage": "https://github.com/aroary/lorem_ipsum#readme",
   "devDependencies": {
-    "vscode": "^1.1.37",
+    "@types/vscode": "^1.66.0",
     "@vscode/test-web": "*"
   },
-  "dependencies": {}
+  "dependencies": {
+    "sharp": "^0.30.3"
+  }
 }

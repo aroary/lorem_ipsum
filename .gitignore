@@ -112,3 +112,6 @@ todo.*
 
 # Build artifacts
 **/*.vsix
+
+# workspace settings
+.vscode/settings.json
