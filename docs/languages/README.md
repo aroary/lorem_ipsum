@@ -8,6 +8,7 @@
 ```
 ##### [ISO 639-2 Language Code List - Codes for the representation of names of languages (Library of Congress)](https://www.loc.gov/standards/iso639-2/php/code_list.php)
 ### Supported languages:
+
 |Code|Language|Desktop|Browser|Preview|
 |-:|:-|-:|:-|:-|
 |ara|Arabic|[✔️](https://github.com/aroary/lorem_ipsum/tree/main/languages/ara.json)|[❌](https://github.com/aroary/lorem_ipsum/issues/new?labels=Language&template=add-language.md&title=Language)|السيارة نفسها تتألم|
