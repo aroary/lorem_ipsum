@@ -26,7 +26,6 @@
     "onCommand:lorem_ipsum.page",
     "onCommand:lorem_ipsum.list",
     "onCommand:lorem_ipsum.image",
-    "onCommand:lorem_ipsum.contents",
     "onCommand:lorem_ipsum.language"
   ],
   "contributes": {
@@ -149,11 +148,6 @@
         "command": "lorem_ipsum.image",
         "title": "lorem ipsum Generate image",
         "category": "generate",
-        "icon": "icon.png"
-      },
-      {
-        "command": "lorem_ipsum.contents",
-        "title": "lorem ipsum Contents count",
         "icon": "icon.png"
       },
       {
