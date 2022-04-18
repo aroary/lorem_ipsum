@@ -6,7 +6,7 @@
   "icon": "icon.png",
   "publisher": "aroary",
   "main": "index.js",
-  "browser": "browser/browser.js",
+  "browser": "browser/index.js",
   "scripts": {
     "start": "vscode-test-web --extensionDevelopmentPath=. .",
     "package": "vsce package"
