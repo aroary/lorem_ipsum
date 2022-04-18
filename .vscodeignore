@@ -4,6 +4,7 @@
 .vscodeignore
 
 # Documentation files
+docs/
 *.txt
 commands/README.md
 languages/README.md
