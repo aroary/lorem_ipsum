@@ -169,9 +169,9 @@
     "url": "https://github.com/aroary/lorem_ipsum/issues"
   },
   "homepage": "https://github.com/aroary/lorem_ipsum#readme",
-  "devDepenedncies": {
+  "devDependencies": {
     "@types/vscode": "^1.66.0",
-    "@vscode/test-web": "*"
+    "@vscode/test-web": "^0.0.24"
   },
   "dependencies": {
     "path": "^0.12.7",
