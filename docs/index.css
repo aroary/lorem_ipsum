@@ -70,3 +70,21 @@ table img {
     border-radius: 8px;
     padding: 2px;
 }
+
+.legit-programming {
+    padding: 20px;
+    width: 50%;
+}
+
+#server {
+    text-align: right;
+}
+
+#server img {
+    border-radius: 5px;
+    width: 150px;
+}
+
+#credit {
+    text-align: left;
+}
