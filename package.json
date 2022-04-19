@@ -1,7 +1,7 @@
 {
   "name": "loremipsum",
   "displayName": "lorem ipsum",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Add lorem ipsum to your code",
   "icon": "icon.png",
   "publisher": "aroary",
@@ -26,7 +26,6 @@
     "onCommand:lorem_ipsum.page",
     "onCommand:lorem_ipsum.list",
     "onCommand:lorem_ipsum.image",
-    "onCommand:lorem_ipsum.contents",
     "onCommand:lorem_ipsum.language"
   ],
   "contributes": {
@@ -34,14 +33,6 @@
       "title": "lorem_ipsum",
       "properties": {
         "lorem_ipsum.language": {
-          "scope": "window",
-          "type": "string",
-          "default": "lat",
-          "minLength": 3,
-          "maxLength": 3,
-          "description": "The language to generate text in."
-        },
-        "lorem_ipsum.language.custom": {
           "scope": "window",
           "type": "array",
           "default": [
@@ -55,7 +46,7 @@
             "elit"
           ],
           "minItems": 8,
-          "maxItems": 100,
+          "maxItems": 200,
           "description": "Custom text to generate."
         },
         "lorem_ipsum.image": {
@@ -160,13 +151,8 @@
         "icon": "icon.png"
       },
       {
-        "command": "lorem_ipsum.contents",
-        "title": "lorem ipsum Contents count",
-        "icon": "icon.png"
-      },
-      {
         "command": "lorem_ipsum.language",
-        "title": "Change lorem ipsum language",
+        "title": "Download and change lorem ipsum language",
         "icon": "icon.png"
       }
     ]
@@ -183,11 +169,12 @@
     "url": "https://github.com/aroary/lorem_ipsum/issues"
   },
   "homepage": "https://github.com/aroary/lorem_ipsum#readme",
-  "devDependencies": {
+  "devDepenedncies": {
     "@types/vscode": "^1.66.0",
     "@vscode/test-web": "*"
   },
   "dependencies": {
-    "sharp": "^0.30.3"
+    "path": "^0.12.7",
+    "sharp": "^0.30.4"
   }
 }
