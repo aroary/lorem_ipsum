@@ -24,7 +24,7 @@
     "onCommand:lorem_ipsum.sentence",
     "onCommand:lorem_ipsum.paragraph",
     "onCommand:lorem_ipsum.page",
-    "onCommand:lorem_ipsum.list",
+    "onCommand:lorem_ipsum.code",
     "onCommand:lorem_ipsum.image",
     "onCommand:lorem_ipsum.language"
   ],
@@ -139,8 +139,8 @@
         "icon": "icon.png"
       },
       {
-        "command": "lorem_ipsum.list",
-        "title": "lorem ipsum Generate list",
+        "command": "lorem_ipsum.code",
+        "title": "lorem ipsum Generate list in code",
         "category": "generate",
         "icon": "icon.png"
       },
