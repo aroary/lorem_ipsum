@@ -5,7 +5,7 @@ async function execute() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of list items to generate', validateInput });
     count = parseInt(count);
 
-    var text = [];
+    const text = [];
     while (text.length < count) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
 
     const editor = vscode.window.activeTextEditor;

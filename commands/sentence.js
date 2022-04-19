@@ -6,7 +6,7 @@ async function execute() {
     count = parseInt(count);
     if (!count) return;
 
-    var text = [];
+    const text = [];
     while (text.length < count) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
 
     const editor = vscode.window.activeTextEditor;

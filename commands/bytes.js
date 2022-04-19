@@ -7,7 +7,7 @@ async function execute() {
     count = parseInt(count);
 
     var text = [];
-    while (text.join` `.length < count) text.push(generate(9)[0]);
+    while (text.join` `.length < count) text.push(generate(1)[0]);
 
     var overflow = text.join` `.length - count;
     text = text.join` `.slice(0, -overflow);
