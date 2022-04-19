@@ -1,7 +1,7 @@
 {
   "name": "loremipsum",
   "displayName": "lorem ipsum",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Add lorem ipsum to your code",
   "icon": "icon.png",
   "publisher": "aroary",
@@ -169,7 +169,7 @@
     "url": "https://github.com/aroary/lorem_ipsum/issues"
   },
   "homepage": "https://github.com/aroary/lorem_ipsum#readme",
-  "devDependencies": {
+  "devDepenedncies": {
     "@types/vscode": "^1.66.0",
     "@vscode/test-web": "*"
   },
