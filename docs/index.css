@@ -18,3 +18,9 @@ body {
     text-decoration: none;
     color: #58a6ff;
 }
+
+#readme-data kbd {
+    border: 1px solid #c9d1d980;
+    border-radius: 8px;
+    padding: 2px;
+}
