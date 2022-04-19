@@ -6,43 +6,174 @@
 
 const vscode = require('vscode'); // https://code.visualstudio.com/api/extension-guides/web-extensions#web-extension-main-file
 
-// Languages
-const languages = {
-    lat: {
-        start: "lorem ipsum dolor sit amet consectetur adipisicing elit",
-        words: ["maxime", "mollitia", "molestiae", "quas", "vel", "repudiandae", "consequuntur", "voluptatum", "laborum", "numquam", "blanditiis", "harum", "quisquam", "eius", "sed", "odit", "fugiat", "iusto", "fuga", "praesentium", "optio", "eaque", "rerum", "Provident", "similique", "accusantium", "nemo", "autem", "Veritatis", "obcaecati", "tenetur", "iure", "earum", "ut", "molestias", "voluptate", "aliquam", "nihil", "eveniet", "aliquid", "culpa", "officia", "aut", "Impedit", "sit", "quaerat", "nesciunt", "ipsum", "debitis", "reprehenderit", "quia", "quo", "neque", "Ipsa", "eos", "sapiente", "officiis", "at", "excepturi", "expedita", "sint", "Sed", "quibusdam", "recusandae", "alias", "error", "adipisci", "amet", "Perspiciatis", "dolorem", "Officiis", "voluptates", "a", "cumque", "velit", "tempora", "Sit", "fugit", "doloribus", "temporibus", "enim", "commodi", "libero", "magni", "deleniti", "quod", "quam", "hic", "doloremque", "provident", "consectetur", "veniam", "ad", "omnis", "saepe", "voluptas", "pariatur", "est", "explicabo", "dolorum", "eligendi", "cupiditate", "maiores", "labore", "suscipit", "Nulla", "placeat", "Voluptatem", "non", "architecto", "ab", "laudantium", "modi", "minima", "sunt", "esse", "totam", "ratione", "exercitationem", "Possimus", "quis", "quasi", "qui", "corporis"]
-    },
-    eng: {
-        start: "the vehicle itself is pain",
-        words: ["most", "resilience", "discomfort", "which", "or", "must", "be", "rejected", "follow", "pleasures", "snacks", "never", "flattery", "of", "these", "anyone", "his", "sed", "hate", "escape", "regular", "flight", "presents", "choice", "symptoms", "of", "things", "Provident", "something", "similar", "accusers", "nobody", "However", "Truth", "blinded", "bound", "right", "of", "them", "ut", "annoyances", "pleasure", "some", "nothing", "will", "come", "to", "pass", "something", "fault", "services", "or", "Impedes", "let", "it", "be", "seek", "don't", "know", "yourself", "debts", "condemn", "because", "where", "nor", "She", "them", "wise", "man", "offices", "at", "catch", "him", "unencumbered", "let", "them", "be", "But", "some", "accepted", "alias", "error", "obtain", "fun", "Encounter", "sorrow", "Duties", "pleasures", "a", "and", "as", "please", "times", "Let", "it", "be", "flees", "sorrows", "times", "for", "commodity", "free", "great", "soothes", "that", "how", "this", "pain", "and", "pain", "provident", "enhanced", "I", "will", "come", "to", "everyone", "often", "pleasure", "resultant", "it", "is", "explain", "pain", "to", "choose", "eagerness", "greater", "hard", "work", "welcomes", "None", "please", "Pleasure", "non", "architect", "ab", "cheering", "modi", "small", "are", "to", "be", "the", "whole", "story", "reason", "training", "We", "can", "who", "almost", "who", "body"]
-    },
-    spa: {
-        start: "el vehículo en sí es doloroso",
-        words: ["la","mayoría","Resiliencia","incomodidad","cuales","o","debe","ser","rechazado","seguir","placeres","meriendas","Nunca","adulación","de","estos","alguien","su","sed","odio","escapar","regular","vuelo","presenta","elección","sintomas","de","cosas","Providente","algo","parecido","acusadores","nadie","Sin","embargo","Verdad","cegado","ligado","Derecha","de","ellos","Utah","molestias","Placer","algunos","nada","vendrá","a","pasar","alguna","cosa","culpa","servicios","o","Impide","Deja","que","sea","buscar","no","lo","se","tú","mismo","deudas","condenar","porque","dónde","ni","Ella","ellos","hombre","sabio","oficinas","a","cógelo","sin","trabas","déjalos","ser","Pero","algunos","aceptado","alias","error","obtener","divertida","Encuentro","tristeza","Deberes","placeres","a","y","como","por","favor","veces","Deja","que","sea","huye","penas","veces","por","mercancía","gratis","estupendo","calma","ese","cómo","esta","dolor","y","dolor","providente","mejorado","vendré","para","todo","el","mundo","a","menudo","Placer","resultante","está","explicar","dolor","elegir","afán","mayor","que","trabajo","duro","da","la","bienvenida","Ninguno","por","favor","Placer","no","arquitecto","ab","aplausos","modi","pequeña","están","ser","la","historia","completa","razón","capacitación","Podemos","OMS","casi","cuerpo"]
-    }
-};
+// Default language
+const lat = [
+    "maxime",
+    "mollitia",
+    "molestiae",
+    "quas",
+    "vel",
+    "repudiandae",
+    "consequuntur",
+    "voluptatum",
+    "laborum",
+    "numquam",
+    "blanditiis",
+    "harum",
+    "quisquam",
+    "eius",
+    "sed",
+    "odit",
+    "fugiat",
+    "iusto",
+    "fuga",
+    "praesentium",
+    "optio",
+    "eaque",
+    "rerum",
+    "Provident",
+    "similique",
+    "accusantium",
+    "nemo",
+    "autem",
+    "Veritatis",
+    "obcaecati",
+    "tenetur",
+    "iure",
+    "earum",
+    "ut",
+    "molestias",
+    "voluptate",
+    "aliquam",
+    "nihil",
+    "eveniet",
+    "aliquid",
+    "culpa",
+    "officia",
+    "aut",
+    "Impedit",
+    "sit",
+    "quaerat",
+    "nesciunt",
+    "ipsum",
+    "debitis",
+    "reprehenderit",
+    "quia",
+    "quo",
+    "neque",
+    "Ipsa",
+    "eos",
+    "sapiente",
+    "officiis",
+    "at",
+    "excepturi",
+    "expedita",
+    "sint",
+    "Sed",
+    "quibusdam",
+    "recusandae",
+    "alias",
+    "error",
+    "adipisci",
+    "amet",
+    "Perspiciatis",
+    "dolorem",
+    "Officiis",
+    "voluptates",
+    "a",
+    "cumque",
+    "velit",
+    "tempora",
+    "Sit",
+    "fugit",
+    "doloribus",
+    "temporibus",
+    "enim",
+    "commodi",
+    "libero",
+    "magni",
+    "deleniti",
+    "quod",
+    "quam",
+    "hic",
+    "doloremque",
+    "provident",
+    "consectetur",
+    "veniam",
+    "ad",
+    "omnis",
+    "saepe",
+    "voluptas",
+    "pariatur",
+    "est",
+    "explicabo",
+    "dolorum",
+    "eligendi",
+    "cupiditate",
+    "maiores",
+    "labore",
+    "suscipit",
+    "Nulla",
+    "placeat",
+    "Voluptatem",
+    "non",
+    "architecto",
+    "ab",
+    "laudantium",
+    "modi",
+    "minima",
+    "sunt",
+    "esse",
+    "totam",
+    "ratione",
+    "exercitationem",
+    "Possimus",
+    "quis",
+    "quasi",
+    "qui",
+    "corporis"
+];
 
 const randomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const validateInput = value => isNaN(value) ? 'Please enter a number' : value > 100000 ? 'Number too high' : null;
 
+/**
+ * @description Generate random text.
+ * @param {number} n - The number of words to generate.
+ * @returns {array<string>} An array of random text.
+ */
 function generate(n) {
-    var language = vscode.workspace.getConfiguration('lorem_ipsum').get('language') || 'lat';
-    var languageData;
-
-    if (language === "ctm") languageData = vscode.workspace.getConfiguration('lorem_ipsum').get('language.custom');
-    else if (!languages.includes(language)) language = 'lat';
-
-    if (!languageData) languageData = require(`../languages/${language}.json`);
-    const generated = languageData.start.split` `;
-
-    if (n > generated.length) for (let i = 0; i < n - 8; i++) {
-        var word = randomItem(languageData.words);
-        while (word === generated[i - 1]) word = randomItem(languageData.words);
-
-        generated.push(word);
-    } else while (generated[n]) generated.pop();
-
+    const languageData = getLanguageData();
+    const generated = [];
+    while (generated.length < n) generated.push(randomItem(languageData));
     return generated;
+};
+
+function getLanguageData(language = null) {
+    const config = vscode.workspace.getConfiguration('lorem_ipsum');
+
+    if (language) {
+        const endpoint = `https://aroary.com/lorem_ipsum/languages/${language}.json`;
+        console.log(new Date().toISOString(), "Getting", endpoint);
+        const request = new XMLHttpRequest();
+        request.open('GET', endpoint, true);
+        request.onload = () => {
+            if (request.status >= 200 && request.status < 300) {
+                config.update("language", JSON.parse(request.responseText), false).then(() => {
+                    vscode.window.showInformationMessage(`Language set to ${language}`);
+                    console.log(new Date().toISOString(), 'Language updated to', language);
+                });
+                return config.get('language');
+            } else {
+                console.log(new Date().toISOString(), `Error ${request.status}: ${request.statusText}`);
+                vscode.window.showErrorMessage(`Error ${request.status}: ${request.statusText}`);
+            }
+        };
+        request.onerror = () => {
+            console.log(new Date().toISOString(), request.statusText);
+            vscode.window.showErrorMessage('request.statusText');
+        };
+    } else return config.get('language') || lat;
 };
 
 async function byte() {
