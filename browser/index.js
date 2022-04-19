@@ -149,6 +149,11 @@ function generate(n) {
     return generated;
 };
 
+/**
+ * @description Get the language data or downlaod a language.
+ * @param {string|null} language - The language to download.
+ * @returns {array<string>} An array of random words from a language.
+ */
 function getLanguageData(language = null) {
     const config = vscode.workspace.getConfiguration('lorem_ipsum');
 
@@ -176,24 +181,29 @@ function getLanguageData(language = null) {
     } else return config.get('language') || lat;
 };
 
+/**
+ * @description Generate a random byte.
+ */
+
 async function byte() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of bytes to generate', validateInput });
     count = parseInt(count);
+    if (!count) return;
 
     var text = [];
-    while (text.join` `.length < count) text.push(generate(9).slice(8)[0]);
-
-    var overflow = text.join` `.length - count;
-    text = text.join` `.slice(0, -overflow);
-
+    while (text.join` `.length < count) text.push(generate(1)[0]);
+    text = text.join` `.slice(0, -(text.join` `.length - count));
     if (text[text.length - 1] === " ") text = text.slice(0, -1) + random("abcdefghijklmnopqrstuvwxyz".split``);
 
     const editor = vscode.window.activeTextEditor;
     editor.edit(edit => edit.insert(editor.selection.active, text));
 
-    console.log(new Date().toISOString(), `Generated ${count} bytes`);
+    console.log(new Date().toISOString(), 'Generated', count, 'bytes');
 };
 
+/**
+ * @description Generate a random word.
+ */
 async function word() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of words to generate', validateInput });
     count = parseInt(count);
@@ -202,45 +212,54 @@ async function word() {
     const editor = vscode.window.activeTextEditor;
     editor.edit(edit => edit.insert(editor.selection.active, generate(count).join` `));
 
-    console.log(new Date().toISOString(), `Generated ${count} words`);
+    console.log(new Date().toISOString(), 'Generated', count, 'words');
 };
 
+/**
+ * @description Generate a random sentence.
+ */
 async function sentence() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of sentences to generate', validateInput });
     count = parseInt(count);
     if (!count) return;
 
-    var text = [];
-    while (text.length < count) text.push(generate(Math.floor(Math.random() * 6) + 16).slice(8).join` ` + ".");
+    const text = [];
+    while (text.length < count) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
 
     const editor = vscode.window.activeTextEditor;
     editor.edit(edit => edit.insert(editor.selection.active, text.join` `));
-    console.log(new Date().toISOString(), `Generated ${count} sentences`);
+    console.log(new Date().toISOString(), 'Generated', count, 'sentences');
 };
 
+/**
+ * @description Generate a random paragraph.
+ */
 async function paragraph() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of paragraphs to generate', validateInput });
     count = parseInt(count);
 
-    var text = [];
+    const text = [];
     for (let j = 0; j < count; j++) {
-        for (let i = 0; i < Math.floor(Math.random() * 3) + 5; i++) text.push(generate(Math.floor(Math.random() * 6) + 16).slice(8).join` ` + ".");
+        for (let i = 0; i < Math.floor(Math.random() * 3) + 5; i++) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
         text.push("\n");
     };
 
     const editor = vscode.window.activeTextEditor;
     editor.edit(edit => edit.insert(editor.selection.active, text.join` `.split("\n").map(v => v.trim()).join("\n").trim()));
-    console.log(new Date().toISOString(), `Generated ${count} paragraphs`);
+    console.log(new Date().toISOString(), 'Generated', count, 'paragraphs');
 };
 
+/**
+ * @description Generate a random pageful text.
+ */
 async function page() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of pages to generate', validateInput });
     count = parseInt(count);
 
-    var text = [];
+    const text = [];
     for (let k = 0; k < count; k++) {
         for (let j = 0; j < Math.floor(Math.random() * 3) + 5; j++) {
-            for (let i = 0; i < Math.floor(Math.random() * 3) + 5; i++) text.push(generate(Math.floor(Math.random() * 6) + 16).slice(8).join` ` + ".");
+            for (let i = 0; i < Math.floor(Math.random() * 3) + 5; i++) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
             text.push("\n");
         };
         text.push("\n");
@@ -248,28 +267,58 @@ async function page() {
 
     const editor = vscode.window.activeTextEditor;
     editor.edit(edit => edit.insert(editor.selection.active, text.join` `.split("\n").map(v => v.trim()).join("\n").trim()));
-    console.log(new Date().toISOString(), `Generated ${count} pages`);
+    console.log(new Date().toISOString(), 'Generated', count, 'pages');
 };
 
+/**
+ * @description Generate a random list.
+ */
 async function list() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of list items to generate', validateInput });
     count = parseInt(count);
 
-    var text = [];
-    while (text.length < count) text.push(generate(Math.floor(Math.random() * 6) + 16).slice(8).join` ` + ".");
+    const text = [];
+    while (text.length < count) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
 
     const editor = vscode.window.activeTextEditor;
     editor.edit(edit => edit.insert(editor.selection.active, text.join`\n`));
-    console.log(new Date().toISOString(), `Generated ${count} list items`);
+    console.log(new Date().toISOString(), 'Generated', count, 'list items');
+};
+
+/**
+ * @description Generate an image.
+ */
+async function image() {
+    console.log(new Date().toISOString(), 'Generating image');
+    vscode.window.showErrorMessage('Image generation is not available in the browser yet');
+};
+
+/**
+ * @description Change the language of the text.
+ */
+function language() {
+    vscode.window.showInputBox({
+        ignoreFocusOut: true,
+        placeHolder: 'Language',
+        validateInput: value => value.length !== 3 ? 'Language code must be 3 characters long' : null,
+        prompt: 'Enter a language code',
+        value: 'lat',
+        valueSelection: undefined
+    }, undefined).then(language => {
+        if (language && vscode.workspace.name) getLanguageData(language);
+        else console.log(new Date().toISOString(), 'Language update failed');
+    });
 };
 
 const commands = [
-    { generate: byte, name: "byte" },
-    { generate: word, name: "word" },
-    { generate: sentence, name: "sentence" },
-    { generate: paragraph, name: "paragraph" },
-    { generate: page, name: "page" },
-    { generate: list, name: "list" }
+    { execute: byte, name: "byte" },
+    { execute: word, name: "word" },
+    { execute: sentence, name: "sentence" },
+    { execute: paragraph, name: "paragraph" },
+    { execute: page, name: "page" },
+    { execute: list, name: "list" },
+    { execute: image, name: "image" },
+    { execute: language, name: "language" }
 ];
 
 /**
@@ -281,7 +330,7 @@ function activate(context) {
 
     commands.forEach(command => {
         console.log(new Date().toISOString(), `registering command ${command.name}`);
-        context.subscriptions.push(vscode.commands.registerCommand('lorem_ipsum.' + command.name, command.generate));
+        context.subscriptions.push(vscode.commands.registerCommand('lorem_ipsum.' + command.name, command.execute));
     });
 
     console.log(new Date().toISOString(), 'lorem_ipsum extension activated');
