@@ -46,7 +46,7 @@
             "elit"
           ],
           "minItems": 8,
-          "maxItems": 100,
+          "maxItems": 200,
           "description": "Custom text to generate."
         },
         "lorem_ipsum.image": {
