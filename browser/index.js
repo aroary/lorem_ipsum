@@ -279,7 +279,7 @@ async function code() {
 
     var text = generate(count);
     switch (vscode.window.activeTextEditor.document.languageId) {
-        case "txt":
+        case "plaintext":
             text = text.join`\n`;
             break;
         case "html":
