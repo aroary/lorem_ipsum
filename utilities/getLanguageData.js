@@ -19,8 +19,7 @@ function getLanguageData(language = null) {
             vscode.window.showErrorMessage(error);
         });
         return config.get('language');
-    } else if (config.has('language')) return config.get('language');
-    else return require("./default.json");
+    } else return config.get('language') || require("./default.json");
 };
 
 module.exports = getLanguageData;
