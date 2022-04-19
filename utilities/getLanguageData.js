@@ -16,7 +16,7 @@ function getLanguageData(language = null) {
             }));
         }).on('error', error => {
             console.log(new Date().toISOString(), error);
-            vscode.window.showErrorMessage(error);
+            vscode.window.showErrorMessage(error.message);
         });
         return config.get('language');
     } else return config.get('language') || require("./default.json");
