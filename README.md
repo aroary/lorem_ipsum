@@ -10,7 +10,7 @@
 - Generate *n* sentences
 - Generate *n* paragraphs
 - Generate *n* pages
-- Generate *n* list items
+- Generate *n* list items in code
 - Generate image
 - Use multiple [languages](https://github.com/aroary/lorem_ipsum/blob/main/languages/README.md)
 #### Feel free to create an [issue](https://github.com/aroary/lorem_ipsum/issues) or a [pull request](https://github.com/aroary/lorem_ipsum/pulls) to add a language that is not listed here. More information about language support can be found in [/languages/README.md](https://aroary.com/lorem_ipsum/languages)
