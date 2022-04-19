@@ -19,5 +19,5 @@ todo
 !*.js
 !*.json
 
-# Temporarily ignore commands/image.js https://github.com/aroary/lorem_ipsum/issues/41#issuecomment-1079821811
-commands/image.js
+# Ignore decompressed browser file
+browser/index.js
