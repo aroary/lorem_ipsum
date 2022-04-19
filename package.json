@@ -152,7 +152,7 @@
       },
       {
         "command": "lorem_ipsum.language",
-        "title": "Downlaod and change lorem ipsum language",
+        "title": "Download and change lorem ipsum language",
         "icon": "icon.png"
       }
     ]
