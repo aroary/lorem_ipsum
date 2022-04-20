@@ -6,11 +6,8 @@ async function execute() {
     count = parseInt(count);
     if (!count) return;
 
-    const text = [];
-    while (text.length < count) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
-
     const editor = vscode.window.activeTextEditor;
-    editor.edit(edit => edit.insert(editor.selection.active, text.join` `));
+    editor.edit(edit => edit.insert(editor.selection.active, new Array(count).fill(undefined).map(() => generate(Math.floor(Math.random() * 6) + 16).join` ` + ".").join` `));
     console.log(new Date().toISOString(), 'Generated', count, 'sentences');
 };
 
