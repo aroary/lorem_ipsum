@@ -6,12 +6,17 @@ async function execute() {
     count = parseInt(count);
     if (!count) return;
 
-    const text = [];
-    while (text.length < count) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
-
     const editor = vscode.window.activeTextEditor;
-    editor.edit(edit => edit.insert(editor.selection.active, text.join` `));
-    console.log(new Date().toISOString(), 'Generated', count, 'sentences');
+    editor.edit(edit => {
+        editor.selections.forEach(selection => {
+            const text = [];
+            while (text.length < count) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
+
+            edit.replace(selection, text.join` `);
+
+            console.log(new Date().toISOString(), 'Generated', count, 'sentences');
+        });
+    });
 };
 
 const validateInput = value => isNaN(value) ? 'Please enter a number' : value > 100000 ? 'Number too high' : null;
