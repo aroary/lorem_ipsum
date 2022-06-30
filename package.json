@@ -16,7 +16,7 @@
     "url": "git+https://github.com/aroary/lorem_ipsum.git"
   },
   "engines": {
-    "vscode": "^1.66.0"
+    "vscode": "^1.68.1"
   },
   "activationEvents": [
     "onCommand:lorem_ipsum.byte",
