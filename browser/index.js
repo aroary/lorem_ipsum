@@ -23,7 +23,12 @@ function generate(n) {
     while (generated.length < n) generated.push(randomItem(languageData));
     return generated;
 };
-2;
+
+/**
+ * @description Get the language data or downlaod a language.
+ * @param {string|null} language - The language to download.
+ * @returns {array<string>} An array of random words from a language.
+ */
 function getLanguageData(language = null) {
     const config = vscode.workspace.getConfiguration('lorem_ipsum');
 
@@ -51,6 +56,10 @@ function getLanguageData(language = null) {
     } else return config.get('language') || lat;
 };
 
+/**
+ * @description Generate a random byte.
+ */
+
 async function byte() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of bytes to generate', validateInput });
     count = parseInt(count);
@@ -71,6 +80,9 @@ async function byte() {
     });
 };
 
+/**
+ * @description Generate a random word.
+ */
 async function word() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of words to generate', validateInput });
     count = parseInt(count);
@@ -86,6 +98,9 @@ async function word() {
     });
 };
 
+/**
+ * @description Generate a random sentence.
+ */
 async function sentence() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of sentences to generate', validateInput });
     count = parseInt(count);
@@ -104,6 +119,9 @@ async function sentence() {
     });
 };
 
+/**
+ * @description Generate a random paragraph.
+ */
 async function paragraph() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of paragraphs to generate', validateInput });
     count = parseInt(count);
@@ -124,6 +142,9 @@ async function paragraph() {
     });
 };
 
+/**
+ * @description Generate a random pageful text.
+ */
 async function page() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of pages to generate', validateInput });
     count = parseInt(count);
@@ -147,30 +168,131 @@ async function page() {
     });
 };
 
-async function list() {
+/**
+ * @description Generate a random list.
+ */
+async function code() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of list items to generate', validateInput });
     count = parseInt(count);
 
+    var text = generate(count);
+    switch (vscode.window.activeTextEditor.document.languageId) {
+        case "plaintext":
+            text = text.join`\n`;
+            break;
+        case "html":
+            text = `<ul>\n<li>${text.join`</li>\n<li>`}</li>\n</ul>`;
+            break;
+        case "php":
+            text = `array("${text.join`", "`}")`;
+            break;
+        case "json":
+            text = `[\n"${text.join`",\n\t"`}"\n]`;
+            break;
+        case "c":
+            text = `{"${text.join`", "`}"}`;
+            break;
+        case "cpp":
+            text = `{"${text.join`", "`}"}`;
+            break;
+        case "java":
+            text = `{"${text.join`", "`}"}`;
+            break;
+        case "javascript":
+            text = `[\n"${text.join`",\n\t"`}"\n]`;
+            break;
+        case "typescript":
+            text = `[\n"${text.join`",\n\t"`}"\n]`;
+            break;
+        case "sql":
+            text = `ARRAY["${text.join`", "`}"]`;
+            break;
+        case "xml":
+            text = `<ul>\n<li>${text.join`</li>\n<li>`}</li>\n</ul>`;
+            break;
+        case "yaml":
+            text = `- ${text.join`\n- `}`;
+            break;
+        case "ini":
+            text = `array[] = ${text.join`\narray[] = `}`;
+            break;
+        case "shellscript":
+            text = `(${text.join` `})`;
+            break;
+        case "bat":
+            text = `${text.join` `}`;
+            break;
+        case "markdown":
+            text = `- ${text.join`\n- `}`;
+            break;
+        case "ruby":
+            text = `%w("${text.join`, `}")`;
+            break;
+        case "python":
+            text = `["${text.join`", "`}"]`;
+            break;
+        case "perl":
+            text = `("${text.join`", "`}")`;
+            break;
+        case "csharp":
+            text = `{ "${text.join`", "`}"; } `;
+            break;
+        case "powershell":
+            text = `@("${text.join`", "`}")`;
+            break;
+        case "rust":
+            text = `["${text.join`", "`}"]`;
+            break;
+        case "haskell":
+            text = `["${text.join`", "`}"]`;
+            break;
+        case "go":
+            text = `{"${text.join`", "`}"}`;
+            break;
+        default:
+            text = text.join`\n`;
+            break;
+    };
+
     const editor = vscode.window.activeTextEditor;
-    editor.edit(edit => {
-        editor.selections.forEach(selection => {
-            const text = [];
-            while (text.length < count) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
+    editor.edit(edit => edit.insert(editor.selection.active, text));
+    console.log(new Date().toISOString(), 'Generated', count, 'list items');
+};
 
-            edit.replace(selection, text.join`\n`);
+/**
+ * @description Generate an image.
+ */
+async function image() {
+    console.log(new Date().toISOString(), 'Generating image');
+    vscode.window.showErrorMessage('Image generation is not available in the browser yet');
+};
 
-            console.log(new Date().toISOString(), 'Generated', count, 'list items');
-        });
+/**
+ * @description Change the language of the text.
+ */
+function language() {
+    vscode.window.showInputBox({
+        ignoreFocusOut: true,
+        placeHolder: 'Language',
+        validateInput: value => value.length !== 3 ? 'Language code must be 3 characters long' : null,
+        prompt: 'Enter a language code',
+        value: 'lat',
+        valueSelection: undefined
+    }, undefined).then(language => {
+        if (language && vscode.workspace.name) getLanguageData(language);
+        else console.log(new Date().toISOString(), 'Language update failed');
     });
 };
 
 const commands = [
-    { generate: byte, name: "byte" },
-    { generate: word, name: "word" },
-    { generate: sentence, name: "sentence" },
-    { generate: paragraph, name: "paragraph" },
-    { generate: page, name: "page" },
-    { generate: list, name: "list" }
+    { execute: byte, name: "byte" },
+    { execute: word, name: "word" },
+    { execute: sentence, name: "sentence" },
+    { execute: paragraph, name: "paragraph" },
+    { execute: page, name: "page" },
+    { execute: code, name: "code" },
+    { execute: image, name: "image" },
+    { execute: language, name: "language" }
 ];
 
 /**
@@ -182,7 +304,7 @@ function activate(context) {
 
     commands.forEach(command => {
         console.log(new Date().toISOString(), `registering command ${command.name}`);
-        context.subscriptions.push(vscode.commands.registerCommand('lorem_ipsum.' + command.name, command.generate));
+        context.subscriptions.push(vscode.commands.registerCommand('lorem_ipsum.' + command.name, command.execute));
     });
 
     console.log(new Date().toISOString(), 'lorem_ipsum extension activated');

@@ -7,10 +7,8 @@ const randomItem = require('./randomItem');
  * @returns {array<string>} An array of random text.
  */
 function generate(n) {
-    const languageData = getLanguageData();
-    const generated = [];
-    while (generated.length < n) generated.push(randomItem(languageData));
-    return generated;
+    const data = getLanguageData();
+    return new Array(n).fill(undefined).map(() => randomItem(data));
 };
 
 module.exports = generate;

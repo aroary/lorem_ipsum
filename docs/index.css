@@ -1,3 +1,7 @@
+.mobile {
+    display: none;
+}
+
 body {
     background-color: #0d1117;
 }
@@ -71,6 +75,10 @@ table img {
     padding: 2px;
 }
 
+#readme-data img {
+    max-width: 100%;
+}
+
 .legit-programming {
     padding: 20px;
     width: 50%;
@@ -87,4 +95,32 @@ table img {
 
 #credit {
     text-align: left;
+}
+
+#credits, a {
+    color: #c9d1d9;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    padding-top: 20px;
+}
+
+#credits img {
+    border-radius: 5px;
+    width: 150px;
+}
+
+@media only screen and (max-width: 600px) {
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+        text-align: center;
+        width: fit-content;
+        margin: auto;
+    }
+
+    #server {
+        text-align: center;
+    }
 }

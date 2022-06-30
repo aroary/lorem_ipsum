@@ -1,6 +1,7 @@
 |release date|version|Supported|description|
 |:-:|:-:|:-:|-|
-|04/19/22|v2.0.0|✔️|Manually install languages|
+|04/19/22|v2.1.1|✔️|Compressed file for browser|
+|04/19/22|v2.1.0|✔️|Manually install languages|
 |04/18/22|v2.0.0|✔️|Added Image support|
 |12/8/21|v1.3.3|❌|Workspace settings|
 |12/8/21|v1.3.2|❌|Browser support|

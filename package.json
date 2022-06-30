@@ -1,7 +1,7 @@
 {
   "name": "loremipsum",
   "displayName": "lorem ipsum",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Add lorem ipsum to your code",
   "icon": "icon.png",
   "publisher": "aroary",
@@ -24,7 +24,7 @@
     "onCommand:lorem_ipsum.sentence",
     "onCommand:lorem_ipsum.paragraph",
     "onCommand:lorem_ipsum.page",
-    "onCommand:lorem_ipsum.list",
+    "onCommand:lorem_ipsum.code",
     "onCommand:lorem_ipsum.image",
     "onCommand:lorem_ipsum.language"
   ],
@@ -139,8 +139,8 @@
         "icon": "icon.png"
       },
       {
-        "command": "lorem_ipsum.list",
-        "title": "lorem ipsum Generate list",
+        "command": "lorem_ipsum.code",
+        "title": "lorem ipsum Generate list in code",
         "category": "generate",
         "icon": "icon.png"
       },
@@ -169,12 +169,12 @@
     "url": "https://github.com/aroary/lorem_ipsum/issues"
   },
   "homepage": "https://github.com/aroary/lorem_ipsum#readme",
-  "devDepenedncies": {
-    "@types/vscode": "^1.66.0",
-    "@vscode/test-web": "*"
+  "devDependencies": {
+    "@types/vscode": "^1.68.1",
+    "@vscode/test-web": "^0.0.24"
   },
   "dependencies": {
     "path": "^0.12.7",
-    "sharp": "^0.30.4"
+    "sharp": "^0.30.7"
   }
 }
