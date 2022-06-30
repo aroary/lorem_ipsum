@@ -4,6 +4,7 @@
 ![](https://img.shields.io/visual-studio-marketplace/i/aroary.loremipsum)
 ![](https://img.shields.io/github/v/release/aroary/lorem_ipsum)
 [![CodeQL](https://github.com/aroary/lorem_ipsum/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/aroary/lorem_ipsum/actions/workflows/codeql-analysis.yml)
+[![pages-build-deployment](https://github.com/aroary/lorem_ipsum/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/aroary/lorem_ipsum/actions/workflows/pages/pages-build-deployment)
 #### Capabilities:
 - Generate *n* bytes
 - Generate *n* words
