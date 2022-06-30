@@ -7,9 +7,13 @@ async function execute() {
     if (!count) return;
 
     const editor = vscode.window.activeTextEditor;
-    editor.edit(edit => edit.insert(editor.selection.active, generate(count).join` `));
+    editor.edit(edit => {
+        editor.selections.forEach(selection => {
+            edit.insert(selection, generate(count).join` `);
 
-    console.log(new Date().toISOString(), 'Generated', count, 'words');
+            console.log(new Date().toISOString(), 'Generated', count, 'words');
+        });
+    });
 };
 
 const validateInput = value => isNaN(value) ? 'Please enter a number' : value > 100000 ? 'Number too high' : null;

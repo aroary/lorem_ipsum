@@ -7,15 +7,19 @@ async function execute() {
     count = parseInt(count);
     if (!count) return;
 
-    var text = [];
-    while (text.join` `.length < count) text.push(generate(1)[0]);
-    text = text.join` `.slice(0, -(text.join` `.length - count));
-    if (text[text.length - 1] === " ") text = text.slice(0, -1) + random("abcdefghijklmnopqrstuvwxyz".split``);
-
     const editor = vscode.window.activeTextEditor;
-    editor.edit(edit => edit.insert(editor.selection.active, text));
+    editor.edit(edit => {
+        editor.selections.forEach(selection => {
+            var text = [];
+            while (text.join` `.length < count) text.push(generate(1)[0]);
+            text = text.join` `.slice(0, -(text.join` `.length - count));
+            if (text[text.length - 1] === " ") text = text.slice(0, -1) + random("abcdefghijklmnopqrstuvwxyz".split``);
 
-    console.log(new Date().toISOString(), 'Generated', count, 'bytes');
+            edit.replace(new vscode.Range(selection.start, selection.start), text);
+
+            console.log(new Date().toISOString(), 'Generated', count, 'bytes');
+        });
+    });
 };
 
 const validateInput = value => isNaN(value) ? 'Please enter a number' : value > 100000 ? 'Number too high' : null;

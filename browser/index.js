@@ -7,132 +7,7 @@
 const vscode = require('vscode'); // https://code.visualstudio.com/api/extension-guides/web-extensions#web-extension-main-file
 
 // Default language
-const lat = [
-    "maxime",
-    "mollitia",
-    "molestiae",
-    "quas",
-    "vel",
-    "repudiandae",
-    "consequuntur",
-    "voluptatum",
-    "laborum",
-    "numquam",
-    "blanditiis",
-    "harum",
-    "quisquam",
-    "eius",
-    "sed",
-    "odit",
-    "fugiat",
-    "iusto",
-    "fuga",
-    "praesentium",
-    "optio",
-    "eaque",
-    "rerum",
-    "Provident",
-    "similique",
-    "accusantium",
-    "nemo",
-    "autem",
-    "Veritatis",
-    "obcaecati",
-    "tenetur",
-    "iure",
-    "earum",
-    "ut",
-    "molestias",
-    "voluptate",
-    "aliquam",
-    "nihil",
-    "eveniet",
-    "aliquid",
-    "culpa",
-    "officia",
-    "aut",
-    "Impedit",
-    "sit",
-    "quaerat",
-    "nesciunt",
-    "ipsum",
-    "debitis",
-    "reprehenderit",
-    "quia",
-    "quo",
-    "neque",
-    "Ipsa",
-    "eos",
-    "sapiente",
-    "officiis",
-    "at",
-    "excepturi",
-    "expedita",
-    "sint",
-    "Sed",
-    "quibusdam",
-    "recusandae",
-    "alias",
-    "error",
-    "adipisci",
-    "amet",
-    "Perspiciatis",
-    "dolorem",
-    "Officiis",
-    "voluptates",
-    "a",
-    "cumque",
-    "velit",
-    "tempora",
-    "Sit",
-    "fugit",
-    "doloribus",
-    "temporibus",
-    "enim",
-    "commodi",
-    "libero",
-    "magni",
-    "deleniti",
-    "quod",
-    "quam",
-    "hic",
-    "doloremque",
-    "provident",
-    "consectetur",
-    "veniam",
-    "ad",
-    "omnis",
-    "saepe",
-    "voluptas",
-    "pariatur",
-    "est",
-    "explicabo",
-    "dolorum",
-    "eligendi",
-    "cupiditate",
-    "maiores",
-    "labore",
-    "suscipit",
-    "Nulla",
-    "placeat",
-    "Voluptatem",
-    "non",
-    "architecto",
-    "ab",
-    "laudantium",
-    "modi",
-    "minima",
-    "sunt",
-    "esse",
-    "totam",
-    "ratione",
-    "exercitationem",
-    "Possimus",
-    "quis",
-    "quasi",
-    "qui",
-    "corporis"
-];
+const lat = getLanguageData("lat");
 
 const randomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const validateInput = value => isNaN(value) ? 'Please enter a number' : value > 100000 ? 'Number too high' : null;
@@ -190,15 +65,19 @@ async function byte() {
     count = parseInt(count);
     if (!count) return;
 
-    var text = [];
-    while (text.join` `.length < count) text.push(generate(1)[0]);
-    text = text.join` `.slice(0, -(text.join` `.length - count));
-    if (text[text.length - 1] === " ") text = text.slice(0, -1) + random("abcdefghijklmnopqrstuvwxyz".split``);
-
     const editor = vscode.window.activeTextEditor;
-    editor.edit(edit => edit.insert(editor.selection.active, text));
+    editor.edit(edit => {
+        editor.selections.forEach(selection => {
+            var text = [];
+            while (text.join` `.length < count) text.push(generate(1)[0]);
+            text = text.join` `.slice(0, -(text.join` `.length - count));
+            if (text[text.length - 1] === " ") text = text.slice(0, -1) + random("abcdefghijklmnopqrstuvwxyz".split``);
 
-    console.log(new Date().toISOString(), 'Generated', count, 'bytes');
+            edit.replace(new vscode.Range(selection.start, selection.start), text);
+
+            console.log(new Date().toISOString(), 'Generated', count, 'bytes');
+        });
+    });
 };
 
 /**
@@ -210,9 +89,13 @@ async function word() {
     if (!count) return;
 
     const editor = vscode.window.activeTextEditor;
-    editor.edit(edit => edit.insert(editor.selection.active, generate(count).join` `));
+    editor.edit(edit => {
+        editor.selections.forEach(selection => {
+            edit.insert(selection, generate(count).join` `);
 
-    console.log(new Date().toISOString(), 'Generated', count, 'words');
+            console.log(new Date().toISOString(), 'Generated', count, 'words');
+        });
+    });
 };
 
 /**
@@ -223,12 +106,17 @@ async function sentence() {
     count = parseInt(count);
     if (!count) return;
 
-    const text = [];
-    while (text.length < count) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
-
     const editor = vscode.window.activeTextEditor;
-    editor.edit(edit => edit.insert(editor.selection.active, text.join` `));
-    console.log(new Date().toISOString(), 'Generated', count, 'sentences');
+    editor.edit(edit => {
+        editor.selections.forEach(selection => {
+            const text = [];
+            while (text.length < count) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
+
+            edit.replace(selection, text.join` `);
+
+            console.log(new Date().toISOString(), 'Generated', count, 'sentences');
+        });
+    });
 };
 
 /**
@@ -238,15 +126,20 @@ async function paragraph() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of paragraphs to generate', validateInput });
     count = parseInt(count);
 
-    const text = [];
-    for (let j = 0; j < count; j++) {
-        for (let i = 0; i < Math.floor(Math.random() * 3) + 5; i++) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
-        text.push("\n");
-    };
-
     const editor = vscode.window.activeTextEditor;
-    editor.edit(edit => edit.insert(editor.selection.active, text.join` `.split("\n").map(v => v.trim()).join("\n").trim()));
-    console.log(new Date().toISOString(), 'Generated', count, 'paragraphs');
+    editor.edit(edit => {
+        editor.selections.forEach(selection => {
+            const text = [];
+            for (let j = 0; j < count; j++) {
+                for (let i = 0; i < Math.floor(Math.random() * 3) + 5; i++) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
+                text.push("\n");
+            };
+
+            edit.replace(selection, text.join` `.split("\n").map(v => v.trim()).join("\n").trim());
+
+            console.log(new Date().toISOString(), 'Generated', count, 'paragraphs');
+        });
+    });
 };
 
 /**
@@ -256,18 +149,23 @@ async function page() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of pages to generate', validateInput });
     count = parseInt(count);
 
-    const text = [];
-    for (let k = 0; k < count; k++) {
-        for (let j = 0; j < Math.floor(Math.random() * 3) + 5; j++) {
-            for (let i = 0; i < Math.floor(Math.random() * 3) + 5; i++) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
-            text.push("\n");
-        };
-        text.push("\n");
-    };
-
     const editor = vscode.window.activeTextEditor;
-    editor.edit(edit => edit.insert(editor.selection.active, text.join` `.split("\n").map(v => v.trim()).join("\n").trim()));
-    console.log(new Date().toISOString(), 'Generated', count, 'pages');
+    editor.edit(edit => {
+        editor.selections.forEach(selection => {
+            const text = [];
+            for (let k = 0; k < count; k++) {
+                for (let j = 0; j < Math.floor(Math.random() * 3) + 5; j++) {
+                    for (let i = 0; i < Math.floor(Math.random() * 3) + 5; i++) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
+                    text.push("\n");
+                };
+                text.push("\n");
+            };
+
+            edit.replace(selection, text.join` `.split`\n`.map(v => v.trim()).join`\n`.trim());
+
+            console.log(new Date().toISOString(), 'Generated', count, 'pages');
+        });
+    });
 };
 
 /**
