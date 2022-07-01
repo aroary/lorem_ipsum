@@ -1,8 +1,8 @@
-/***************************************************************
- * @file lorem ipsum browser extension for https://github.dev/ *
- * @copyright (c) 2021 aroary                                  *
- * @license MIT                                                *
- ***************************************************************/
+/**************************************************************
+ * @file lorem ipsum browser extension for visual studio code *
+ * @copyright (c) 2021 aroary                                 *
+ * @license MIT                                               *
+ **************************************************************/
 
 const vscode = require('vscode'); // https://code.visualstudio.com/api/extension-guides/web-extensions#web-extension-main-file
 
