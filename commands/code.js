@@ -10,37 +10,28 @@ async function execute() {
         case "plaintext":
             text = text.join`\n`;
             break;
+        case "xml":
         case "html":
-            text = `<ul>\n<li>${text.join`</li>\n<li>`}</li>\n</ul>`;
+            text = `<ul>\n\t<li>${text.join`</li>\n\t<li>`}</li>\n</ul>`;
             break;
         case "php":
             text = `array("${text.join`", "`}")`;
             break;
+        case "javascript":
+        case "typescript":
         case "json":
-            text = `[\n"${text.join`",\n\t"`}"\n]`;
+            text = `[\n\t"${text.join`",\n\t"`}"\n]`;
             break;
+        case "go":
+        case "java":
+        case "cpp":
         case "c":
             text = `{"${text.join`", "`}"}`;
-            break;
-        case "cpp":
-            text = `{"${text.join`", "`}"}`;
-            break;
-        case "java":
-            text = `{"${text.join`", "`}"}`;
-            break;
-        case "javascript":
-            text = `[\n"${text.join`",\n\t"`}"\n]`;
-            break;
-        case "typescript":
-            text = `[\n"${text.join`",\n\t"`}"\n]`;
             break;
         case "sql":
             text = `ARRAY["${text.join`", "`}"]`;
             break;
-        case "xml":
-            text = `<ul>\n<li>${text.join`</li>\n<li>`}</li>\n</ul>`;
-            break;
-        case "yaml":
+        case "yaml", "markdown":
             text = `- ${text.join`\n- `}`;
             break;
         case "ini":
@@ -52,12 +43,11 @@ async function execute() {
         case "bat":
             text = `${text.join` `}`;
             break;
-        case "markdown":
-            text = `- ${text.join`\n- `}`;
-            break;
         case "ruby":
             text = `%w("${text.join`, `}")`;
             break;
+        case "haskell":
+        case "rust":
         case "python":
             text = `["${text.join`", "`}"]`;
             break;
@@ -69,15 +59,6 @@ async function execute() {
             break;
         case "powershell":
             text = `@("${text.join`", "`}")`;
-            break;
-        case "rust":
-            text = `["${text.join`", "`}"]`;
-            break;
-        case "haskell":
-            text = `["${text.join`", "`}"]`;
-            break;
-        case "go":
-            text = `{"${text.join`", "`}"}`;
             break;
         default:
             text = text.join`\n`;
