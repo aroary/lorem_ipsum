@@ -9,7 +9,7 @@ async function execute() {
     const lines = vscode.workspace.getConfiguration('lorem_ipsum').get('image.lines') || 4;
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" overflow="hidden" role="img" aria-label="lorem_ipsum"><title>lorem ipsum</title><clipPath id="r"><rect width="${width}" height="${height}" rx="10" fill="#fff"/></clipPath><g clip-path="url(#r)"><rect width="${width}" height="${height}" fill="transparent"/></g>${new Array(lines).fill(undefined).map(() => generate(Math.floor(Math.random() * 6) + 16).join` `).map((line, index) => `<text x="50%" y="${(100 / (parseInt(lines) + 1)) * (index + 1)}%" fill="#000" dominant-baseline="middle" text-anchor="middle" textLength="80%">${line}</text>`).join``}</svg>`;
     const format = vscode.workspace.getConfiguration('lorem_ipsum').get('image') || "png";
-    const file = vscode.Uri.file(path.join(vscode.workspace.workspaceFolders[0].uri.fsPath, vscode.workspace.getConfiguration('lorem_ipsum').get('image.output') || "./", `./l_i.${Math.floor(Math.random() * 1000)}.${format}`));
+    const file = vscode.Uri.file(path.join(vscode.workspace.workspaceFolders[0].uri.fsPath, vscode.workspace.getConfiguration('lorem_ipsum').get('image.output') || "./", `./${new Date().getTime()}.${format}`));
 
     if (vscode.workspace.name) sharp(Buffer.from(svg))[format]().toBuffer().then(buffer => vscode.workspace.fs.writeFile(file, buffer).then(() => {
         console.log(new Date().toISOString(), "Generated", file.path);
