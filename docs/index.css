@@ -116,11 +116,26 @@ table img {
     .mobile {
         display: block;
         text-align: center;
-        width: fit-content;
         margin: auto;
     }
 
     #server {
         text-align: center;
     }
+}
+
+#links {
+    text-align: center;
+}
+
+#links > td > a:hover {
+    color: #c9d1d980;
+}
+
+#copy {
+    text-align: left;
+}
+
+.mobile {
+    color: white;
 }
