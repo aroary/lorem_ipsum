@@ -9,7 +9,7 @@ async function execute() {
     const editor = vscode.window.activeTextEditor;
     editor.edit(edit => {
         editor.selections.forEach(selection => {
-            edit.insert(selection, generate(count).join` `);
+            edit.replace(selection, generate(count).join` `);
 
             console.log(new Date().toISOString(), 'Generated', count, 'words');
         });
