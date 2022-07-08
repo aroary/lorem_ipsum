@@ -9,10 +9,7 @@ async function execute() {
     const editor = vscode.window.activeTextEditor;
     editor.edit(edit => {
         editor.selections.forEach(selection => {
-            const text = [];
-            while (text.length < count) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
-
-            edit.replace(selection, text.join` `);
+            edit.replace(selection, new Array(count).fill(undefined).map(() => generate(Math.floor(Math.random() * 4) + 16).join` ` + ".").join` `);
 
             console.log(new Date().toISOString(), 'Generated', count, 'sentences');
         });

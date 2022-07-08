@@ -15,7 +15,7 @@ async function execute() {
             text = text.join` `.slice(0, -(text.join` `.length - count));
             if (text[text.length - 1] === " ") text = text.slice(0, -1) + random("abcdefghijklmnopqrstuvwxyz".split``);
 
-            edit.replace(new vscode.Range(selection.start, selection.start), text);
+            edit.replace(selection, text);
 
             console.log(new Date().toISOString(), 'Generated', count, 'bytes');
         });
