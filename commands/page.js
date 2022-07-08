@@ -8,16 +8,8 @@ async function execute() {
     const editor = vscode.window.activeTextEditor;
     editor.edit(edit => {
         editor.selections.forEach(selection => {
-            const text = [];
-            for (let k = 0; k < count; k++) {
-                for (let j = 0; j < Math.floor(Math.random() * 3) + 5; j++) {
-                    for (let i = 0; i < Math.floor(Math.random() * 3) + 5; i++) text.push(generate(Math.floor(Math.random() * 6) + 16).join` ` + ".");
-                    text.push("\n");
-                };
-                text.push("\n");
-            };
+            edit.replace(selection, new Array(count).fill(undefined).map(() => new Array(Math.floor(Math.random() * 3) + 5).fill(undefined).map(() => new Array(Math.floor(Math.random() * 3) + 5).fill(undefined).map(() => generate(Math.floor(Math.random() * 4) + 16).join` ` + ".").join` `).join`\n`).join`\n\n`);
 
-            edit.replace(selection, text.join` `.split`\n`.map(v => v.trim()).join`\n`.trim());
 
             console.log(new Date().toISOString(), 'Generated', count, 'pages');
         });
