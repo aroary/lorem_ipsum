@@ -1,5 +1,5 @@
 # Languages
-### Supported languages: [`languages.json`](./languages.csv)
+### Supported languages: [`languages.csv`](./languages.csv)
 ### To request or add a language create an [issue](https://github.com/aroary/lorem_ipsum/issues) or a [pull request](https://github.com/aroary/lorem_ipsum/pulls).
 ### Words are translated from these Latin words:
 ```txt
