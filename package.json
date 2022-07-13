@@ -118,13 +118,13 @@
           ],
           "description": "The image format to generate."
         },
-        "lorem_ipsum.image.output": {
+        "lorem_ipsum.image-output": {
           "scope": "window",
           "type": "string",
           "default": "./",
           "description": "Output folder for the image."
         },
-        "lorem_ipsum.image.width": {
+        "lorem_ipsum.image-width": {
           "scope": "window",
           "type": "number",
           "default": 500,
@@ -132,7 +132,7 @@
           "maximum": 1000,
           "description": "The width of the image."
         },
-        "lorem_ipsum.image.height": {
+        "lorem_ipsum.image-height": {
           "scope": "window",
           "type": "number",
           "default": 500,
@@ -140,21 +140,21 @@
           "maximum": 1000,
           "description": "The height of the image."
         },
-        "lorem_ipsum.image.lines": {
+        "lorem_ipsum.image-lines": {
           "scope": "window",
           "type": "number",
           "default": 4,
-          "minimum": 2,
-          "maximum": 6,
+          "minimum": 1,
+          "maximum": 10,
           "description": "The amount of lines of text within the image."
         },
-        "lorem_ipsum.image.fontFamily": {
+        "lorem_ipsum.image-fontFamily": {
           "scope": "window",
           "type": "string",
           "default": "ariel",
           "description": "The font family of the text within the image."
         },
-        "lorem_ipsum.image.background": {
+        "lorem_ipsum.image-background": {
           "scope": "window",
           "type": "string",
           "default": "transparent",
