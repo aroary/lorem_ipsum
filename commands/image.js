@@ -11,8 +11,8 @@ async function execute() {
     const svg = `
         <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" overflow="hidden" role="img" aria-label="lorem_ipsum">
             <title>lorem ipsum</title>
-            <rect width="100%" height="100%" fill="${config.get("image-background")}"/>
-            ${new Array(lines).fill(undefined).map(() => generate(5).join` `).map((line, index) => `<text x="50%" y="${(100 / (parseInt(lines) + 1)) * (index + 1)}%" fill="#000" dominant-baseline="middle" text-anchor="middle" textLength="80%">
+            <rect width="100%" height="100%" fill="${config.get("image-bg")}"/>
+            ${new Array(lines).fill(undefined).map(() => generate(5).join` `).map((line, index) => `<text x="50%" y="${(100 / (parseInt(lines) + 1)) * (index + 1)}%" fill="${config.get("image-fg")}" font-family="${vscode.workspace.getConfiguration("editor").get("fontFamily")}" dominant-baseline="middle" text-anchor="middle" textLength="80%">
                 ${line}
             </text>`).join``}
         </svg>

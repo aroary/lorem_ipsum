@@ -148,17 +148,17 @@
           "maximum": 10,
           "description": "The amount of lines of text within the image."
         },
-        "lorem_ipsum.image-fontFamily": {
+        "lorem_ipsum.image-bg": {
           "scope": "window",
           "type": "string",
-          "default": "ariel",
-          "description": "The font family of the text within the image."
+          "default": "white",
+          "description": "The background color."
         },
-        "lorem_ipsum.image-background": {
+        "lorem_ipsum.image-fg": {
           "scope": "window",
           "type": "string",
-          "default": "transparent",
-          "description": "The gradiant colors for the background"
+          "default": "black",
+          "description": "The foreground color."
         }
       }
     },
