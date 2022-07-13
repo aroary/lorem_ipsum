@@ -1,27 +1,23 @@
 const vscode = require('vscode');
+const https = require('https');
 const getLanguageData = require("../utilities/getLanguageData")
 
-/**
- * @param {string} value - User input
- * @returns {string|null} - Error message
- */
-const validateInput = value => {
-    if (value.length !== 3) return 'Language code must be 3 characters long';
-    else return null;
-};
-
 function execute() {
-    vscode.window.showInputBox({
-        ignoreFocusOut: true,
-        placeHolder: 'Language',
-        validateInput,
-        prompt: 'Enter a language code',
-        value: 'lat',
-        valueSelection: undefined
-    }, undefined).then(language => {
-        if (language && vscode.workspace.name) getLanguageData(language);
-        else console.log(new Date().toISOString(), 'Language update failed');
-    });
+    https.request("https://aroary.com/lorem_ipsum/languages/languages.csv", res => {
+        var data = "";
+        res.on('data', chunk => data += chunk);
+        res.on("end", () => vscode.window.showQuickPick(data.split`,`, {
+            ignoreFocusOut: true,
+            placeHolder: "Language",
+            title: "Select a language"
+        }).then(language => {
+            if (language && vscode.workspace.name) getLanguageData(language);
+            else console.log(new Date().toISOString(), 'Language update failed');
+        }));
+    }).on('error', error => {
+        console.log(new Date().toISOString(), error);
+        vscode.window.showErrorMessage(error.message);
+    }).end();
 };
 
 module.exports = { name: "language", execute };
