@@ -4,6 +4,7 @@ const generate = require("../utilities/lorem_ipsum");
 async function execute() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of list items to generate', validateInput });
     count = parseInt(count);
+    if (!count) return;
 
     var text = generate(count);
     switch (vscode.window.activeTextEditor.document.languageId) {
@@ -70,6 +71,6 @@ async function execute() {
     console.log(new Date().toISOString(), 'Generated', count, 'list items');
 };
 
-const validateInput = value => isNaN(value) ? 'Please enter a number' : value > 100000 ? 'Number too high' : null;
+const validateInput = value => isNaN(value) ? 'Please enter a number' : value > 100000 || value < 1 ? 'Number must be between 1 and 100000' : null;
 
 module.exports = { name: "code", execute };

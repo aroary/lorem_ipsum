@@ -22,6 +22,6 @@ async function execute() {
     });
 };
 
-const validateInput = value => isNaN(value) ? 'Please enter a number' : value > 100000 ? 'Number too high' : null;
+const validateInput = value => isNaN(value) ? 'Please enter a number' : value > 100000 || value < 1 ? 'Number must be between 1 and 100000' : null;
 
 module.exports = { name: "byte", execute };
