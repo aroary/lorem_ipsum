@@ -1,6 +1,11 @@
 const https = require('https');
 const vscode = require("vscode");
 
+/**
+ * @descrition Return the language data. Specifying a language changes the language setting to the specified language.
+ * @param {*} language - The language to download.
+ * @returns {Array<string>} The language data.
+ */
 function getLanguageData(language = null) {
     const config = vscode.workspace.getConfiguration('lorem_ipsum');
 

@@ -11,6 +11,7 @@ function execute() {
             placeHolder: "Language",
             title: "Select a language"
         }).then(language => {
+            // Success and fail are handled within `getLanguageData`.
             if (language && vscode.workspace.name) getLanguageData(language);
             else console.log(new Date().toISOString(), 'Language update failed');
         }));
