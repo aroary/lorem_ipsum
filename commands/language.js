@@ -3,11 +3,11 @@ const https = require('https');
 const getLanguageData = require("../utilities/getLanguageData")
 
 function execute() {
-    https.request("https://aroary.com/lorem_ipsum/languages/languages.json", res => {
+    https.request("https://aroary.com/lorem_ipsum/languages/languages.csv", res => {
         var data = "";
         console.log(2);
         res.on('data', chunk => data += chunk);
-        res.on("end", () => vscode.window.showQuickPick(JSON.parse(data), {
+        res.on("end", () => vscode.window.showQuickPick(data.split`,`, {
             ignoreFocusOut: true,
             placeHolder: "Language",
             title: "Select a language"
