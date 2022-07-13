@@ -235,17 +235,29 @@ async function image() {
  * @description Change the language of the text.
  */
 function language() {
-    vscode.window.showInputBox({
-        ignoreFocusOut: true,
-        placeHolder: 'Language',
-        validateInput: value => value.length !== 3 ? 'Language code must be 3 characters long' : null,
-        prompt: 'Enter a language code',
-        value: 'lat',
-        valueSelection: undefined
-    }, undefined).then(language => {
-        if (language && vscode.workspace.name) getLanguageData(language);
-        else console.log(new Date().toISOString(), 'Language update failed');
-    });
+    const endpoint = "https://aroary.com/lorem_ipsum/languages/languages.csv";
+    const request = new XMLHttpRequest();
+    request.open("GET", endpoint, true);
+    request.onload = () => {
+        if (request.status >= 200 && request.status < 400) {
+            vscode.window.showQuickPick(request.responseText.split`,`, {
+                ignoreFocusOut: true,
+                placeHolder: "Language",
+                title: "Select a language"
+            }).then(language => {
+                if (language && vscode.workspace.name) getLanguageData(language);
+                else console.log(new Date().toISOString(), 'Language update failed');
+            });
+        } else {
+            console.log(new Date().toISOString(), request.status, request.statusText);
+            vscode.window.showErrorMessage('Error getting languages');
+        }
+    };
+    request.onerror = () => {
+        console.log(new Date().toISOString(), 'Error getting languages');
+        vscode.window.showErrorMessage('Error getting languages');
+    };
+    request.send();
 };
 
 const commands = [

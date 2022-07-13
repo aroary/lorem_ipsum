@@ -5,7 +5,6 @@ const getLanguageData = require("../utilities/getLanguageData")
 function execute() {
     https.request("https://aroary.com/lorem_ipsum/languages/languages.csv", res => {
         var data = "";
-        console.log(2);
         res.on('data', chunk => data += chunk);
         res.on("end", () => vscode.window.showQuickPick(data.split`,`, {
             ignoreFocusOut: true,
@@ -19,7 +18,6 @@ function execute() {
         console.log(new Date().toISOString(), error);
         vscode.window.showErrorMessage(error.message);
     }).end();
-    console.log(1);
 };
 
 module.exports = { name: "language", execute };
