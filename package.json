@@ -1,7 +1,7 @@
 {
   "name": "loremipsum",
   "displayName": "lorem ipsum",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Add lorem ipsum to your code",
   "icon": "icon.png",
   "publisher": "aroary",
