@@ -1,6 +1,6 @@
 |release date|version|Supported|description|
 |:-:|:-:|:-:|-|
-|07/15/22|v2.3.2|✔️|Generate images from inputs|
+|07/15/22|v2.3.0|✔️|Generate images from inputs|
 |07/13/22|v2.2.2|✔️|Easier language downloading|
 |07/08/22|v2.2.1|✔️|Improved generation|
 |06/30/22|v2.2.0|✔️|Multiple selections support|
