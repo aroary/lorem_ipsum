@@ -103,62 +103,6 @@
           "minItems": 8,
           "maxItems": 200,
           "description": "Custom text to generate."
-        },
-        "lorem_ipsum.image": {
-          "scope": "window",
-          "type": "string",
-          "default": "png",
-          "enum": [
-            "png",
-            "jpeg",
-            "gif",
-            "webp",
-            "tiff",
-            "avif"
-          ],
-          "description": "The image format to generate."
-        },
-        "lorem_ipsum.image-output": {
-          "scope": "window",
-          "type": "string",
-          "default": "./",
-          "description": "Output folder for the image."
-        },
-        "lorem_ipsum.image-width": {
-          "scope": "window",
-          "type": "number",
-          "default": 500,
-          "minimum": 100,
-          "maximum": 1000,
-          "description": "The width of the image."
-        },
-        "lorem_ipsum.image-height": {
-          "scope": "window",
-          "type": "number",
-          "default": 500,
-          "minimum": 100,
-          "maximum": 1000,
-          "description": "The height of the image."
-        },
-        "lorem_ipsum.image-lines": {
-          "scope": "window",
-          "type": "number",
-          "default": 4,
-          "minimum": 1,
-          "maximum": 10,
-          "description": "The amount of lines of text within the image."
-        },
-        "lorem_ipsum.image-bg": {
-          "scope": "window",
-          "type": "string",
-          "default": "white",
-          "description": "The background color."
-        },
-        "lorem_ipsum.image-fg": {
-          "scope": "window",
-          "type": "string",
-          "default": "black",
-          "description": "The foreground color."
         }
       }
     },
