@@ -4,8 +4,6 @@ const path = require("path");
 const generate = require("../utilities/lorem_ipsum");
 
 async function execute() {
-    const config = vscode.workspace.getConfiguration('lorem_ipsum');
-
     if (!vscode.workspace.name) return vscode.window.showErrorMessage("Please open a workspace before using this command.");
 
     var ratio = await vscode.window.showQuickPick(["1:1", "2:3", "4:5", "5:6", "5:7", "16:9", "11:14"], { ignoreFocusOut: true, placeHolder: "Ratio", title: "Image ratio" });
