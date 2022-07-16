@@ -17,7 +17,7 @@ async function execute() {
         ignoreFocusOut: true,
         title: "Number of lines of text",
         value: "5",
-        validateInput: value => parseInt(value) < 0 || parseInt(value) > 20 ? "Value must be more than 0 and less than or equal to 20" : null
+        validateInput: value => parseInt(value) > 0 || parseInt(value) < 21 ? null : "Minimum 0, maximum 20"
     });
 
     lines = parseInt(lines);
