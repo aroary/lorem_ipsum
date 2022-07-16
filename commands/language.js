@@ -1,6 +1,6 @@
 const vscode = require('vscode');
 const https = require('https');
-const getLanguageData = require("../utilities/getLanguageData")
+const changeLanguage = require("../utilities/changeLanguage.js");
 
 function execute() {
     https.request("https://aroary.com/lorem_ipsum/languages/languages.csv", res => {
@@ -12,7 +12,7 @@ function execute() {
             title: "Select a language"
         }).then(language => {
             // Success and fail are handled within `getLanguageData`.
-            if (language && vscode.workspace.name) getLanguageData(language);
+            if (language && vscode.workspace.name) changeLanguage(language);
             else console.log(new Date().toISOString(), 'Language update failed');
         }));
     }).on('error', error => {
