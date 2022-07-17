@@ -1,5 +1,5 @@
 const vscode = require('vscode');
-const generate = require("../utilities/lorem_ipsum");
+const generate = require("../utilities/lorem_ipsum").generate;
 
 async function execute() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of list items to generate', validateInput });

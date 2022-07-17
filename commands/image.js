@@ -1,7 +1,7 @@
 const vscode = require('vscode');
 const sharp = require('sharp');
 const path = require("path");
-const generate = require("../utilities/lorem_ipsum");
+const generate = require("../utilities/lorem_ipsum").word;
 
 async function execute() {
     if (!vscode.workspace.name) return vscode.window.showErrorMessage("Please open a workspace before using this command.");
@@ -34,7 +34,7 @@ async function execute() {
             <title>lorem ipsum</title>
             <rect width="100%" height="100%" fill="${background}"/>
             ${new Array(lines).fill(undefined).map((line, index) => `<text x="50%" y="${(100 / (lines + 1)) * (index + 1)}%" fill="${foreground}" font-family="${vscode.workspace.getConfiguration("editor").get("fontFamily")}" dominant-baseline="middle" text-anchor="middle" textLength="80%">
-                ${generate(5).join` `}
+                ${generate(5)}
             </text>`).join``}
         </svg>
     `;

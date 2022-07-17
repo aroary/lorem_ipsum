@@ -1,5 +1,5 @@
 const vscode = require('vscode');
-const generate = require("../utilities/lorem_ipsum");
+const generate = require("../utilities/lorem_ipsum").sentance;
 
 async function execute() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of sentences to generate', validateInput });
@@ -9,8 +9,7 @@ async function execute() {
     const editor = vscode.window.activeTextEditor;
     editor.edit(edit => {
         editor.selections.forEach(selection => {
-            edit.replace(selection, new Array(count).fill(undefined).map(() => generate(Math.floor(Math.random() * 4) + 16).join` ` + ".").join` `);
-
+            edit.replace(selection, generate(count));
             console.log(new Date().toISOString(), 'Generated', count, 'sentences');
         });
     });

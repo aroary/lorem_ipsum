@@ -1,5 +1,5 @@
 const vscode = require('vscode');
-const generate = require("../utilities/lorem_ipsum");
+const generate = require("../utilities/lorem_ipsum").byte;
 
 async function execute() {
     var count = await vscode.window.showInputBox({ ignoreFocusOut: true, placeHolder: 'Number of bytes to generate', validateInput });
@@ -9,13 +9,7 @@ async function execute() {
     const editor = vscode.window.activeTextEditor;
     editor.edit(edit => {
         editor.selections.forEach(selection => {
-            var text = [];
-            while (text.join` `.length < count) text.push(generate(1)[0]);
-            text = text.join` `.slice(0, -(text.join` `.length - count));
-            if (text[text.length - 1] === " ") text = text.slice(0, -1) + ("abcdefghijklmnopqrstuvwxyz".split``[Math.random() * 26]);
-
-            edit.replace(selection, text);
-
+            edit.replace(selection, generate(count));
             console.log(new Date().toISOString(), 'Generated', count, 'bytes');
         });
     });
