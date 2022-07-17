@@ -1,5 +1,5 @@
 const vscode = require('vscode');
-const generate = require("../utilities/lorem_ipsum");
+const generate = require("../utilities/generate");
 
 async function execute() {
     const type = await vscode.window.showQuickPick([
@@ -20,7 +20,7 @@ async function execute() {
     var count = await vscode.window.showInputBox({
         ignoreFocusOut: true,
         placeHolder: 'Number of type to generate',
-        validateInput: value => parseInt(value) > 1 ? null : "Please enter a number greater than one"
+        validateInput: value => parseInt(value) > 0 ? null : "Please enter a number greater than zero"
     });
     count = parseInt(count);
     if (!count) return;

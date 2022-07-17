@@ -1,7 +1,7 @@
 const vscode = require('vscode');
 const sharp = require('sharp');
 const path = require("path");
-const generate = require("../utilities/lorem_ipsum").word;
+const generate = require("../utilities/generate").word;
 
 async function execute() {
     if (!vscode.workspace.name) return vscode.window.showErrorMessage("Please open a workspace before using this command.");
