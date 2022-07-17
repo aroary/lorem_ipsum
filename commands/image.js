@@ -12,16 +12,7 @@ async function execute() {
 
     const [height, width] = [500, Math.round(500 / (ratio[0] / ratio[1]))];
 
-    var lines = await vscode.window.showInputBox({
-        placeHolder: "Line Count",
-        ignoreFocusOut: true,
-        title: "Number of lines of text",
-        value: "5",
-        validateInput: value => parseInt(value) > 0 || parseInt(value) < 21 ? null : "Minimum 0, maximum 20"
-    });
-
-    lines = parseInt(lines);
-    if (!lines) return;
+    const lines = 20; // Determined to be acceptable.
 
     const background = await vscode.window.showInputBox({ placeHolder: "CSS Color", ignoreFocusOut: true, title: "Background color", value: "white", validateInput: colorValidation });
     if (!background) return;
@@ -34,7 +25,7 @@ async function execute() {
             <title>lorem ipsum</title>
             <rect width="100%" height="100%" fill="${background}"/>
             ${new Array(lines).fill(undefined).map((line, index) => `<text x="50%" y="${(100 / (lines + 1)) * (index + 1)}%" fill="${foreground}" font-family="${vscode.workspace.getConfiguration("editor").get("fontFamily")}" dominant-baseline="middle" text-anchor="middle" textLength="80%">
-                ${generate(5)}
+                ${generate(20)}
             </text>`).join``}
         </svg>
     `;
