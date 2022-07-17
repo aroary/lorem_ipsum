@@ -2,7 +2,7 @@ const https = require('https');
 const vscode = require("vscode");
 
 /**
- * @descrition Change the language of the text generated.
+ * @description Change the language of the text generated.
  * @param {string} language - The language to download.
  * @returns {Array<string>} The language data.
  */

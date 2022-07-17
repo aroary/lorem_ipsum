@@ -7,9 +7,9 @@
 const vscode = require('vscode'); // https://code.visualstudio.com/api/extension-guides/web-extensions#web-extension-main-file
 
 /**
- * @description Get the language data or downlaod a language.
- * @param {string|null} language - The language to download.
- * @returns {array<string>} An array of random words from a language.
+ * @description Change the language of the text generated.
+ * @param {string} language - The language to download.
+ * @returns {Array<string>} The language data.
  */
 function changeLanguage(language) {
     const config = vscode.workspace.getConfiguration('lorem_ipsum');
