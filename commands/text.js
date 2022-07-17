@@ -5,7 +5,7 @@ async function execute() {
     const type = await vscode.window.showQuickPick([
         "byte",
         "word",
-        "sentance",
+        "sentence",
         "paragraph",
         "page",
         "code"

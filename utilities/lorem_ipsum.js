@@ -22,12 +22,12 @@ function word(count) {
     return generate(count).join` `;
 };
 
-function sentance(count) {
+function sentence(count) {
     return new Array(count).fill(undefined).map(() => word(Math.floor(Math.random() * 4) + 16) + ".").join` `;
 };
 
 function paragraph(count) {
-    return new Array(count).fill(undefined).map(() => sentance(Math.floor(Math.random() * 3) + 5)).join`\n`;
+    return new Array(count).fill(undefined).map(() => sentence(Math.floor(Math.random() * 3) + 5)).join`\n`;
 };
 
 function page(count) {
@@ -98,4 +98,4 @@ function code(count) {
     return text;
 }
 
-module.exports = { generate, byte, word, sentance, paragraph, page, code };
+module.exports = { generate, byte, word, sentence, paragraph, page, code };
