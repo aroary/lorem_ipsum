@@ -1,5 +1,3 @@
-Broswer: browser/*
-
+Browser: browser/*
 Desktop: commands/*
-
 Language: language/*
