@@ -38,6 +38,9 @@ function changeLanguage(language) {
 
 const types = [byte, word, sentence, paragraph, page, code]
 
+/**
+ * @description Generate a text.
+ */
 async function text() {
     const type = await vscode.window.showQuickPick([
         "byte",
