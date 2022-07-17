@@ -19,12 +19,7 @@
     "vscode": "^1.69.1"
   },
   "activationEvents": [
-    "onCommand:lorem_ipsum.byte",
-    "onCommand:lorem_ipsum.word",
-    "onCommand:lorem_ipsum.sentence",
-    "onCommand:lorem_ipsum.paragraph",
-    "onCommand:lorem_ipsum.page",
-    "onCommand:lorem_ipsum.code",
+    "onCommand:lorem_ipsum.text",
     "onCommand:lorem_ipsum.image",
     "onCommand:lorem_ipsum.language"
   ],
@@ -108,38 +103,8 @@
     },
     "commands": [
       {
-        "command": "lorem_ipsum.byte",
-        "title": "lorem ipsum Generate bytes",
-        "category": "generate",
-        "icon": "icon.png"
-      },
-      {
-        "command": "lorem_ipsum.word",
-        "title": "lorem ipsum Generate word",
-        "category": "generate",
-        "icon": "icon.png"
-      },
-      {
-        "command": "lorem_ipsum.sentence",
-        "title": "lorem ipsum Generate sentance",
-        "category": "generate",
-        "icon": "icon.png"
-      },
-      {
-        "command": "lorem_ipsum.paragraph",
-        "title": "lorem ipsum Generate paragraph",
-        "category": "generate",
-        "icon": "icon.png"
-      },
-      {
-        "command": "lorem_ipsum.page",
-        "title": "lorem ipsum Generate page",
-        "category": "generate",
-        "icon": "icon.png"
-      },
-      {
-        "command": "lorem_ipsum.code",
-        "title": "lorem ipsum Generate list in code",
+        "command": "lorem_ipsum.text",
+        "title": "lorem ipsum Generate text",
         "category": "generate",
         "icon": "icon.png"
       },

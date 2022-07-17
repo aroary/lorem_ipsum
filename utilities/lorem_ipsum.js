@@ -34,4 +34,68 @@ function page(count) {
     return new Array(count).fill(undefined).map(() => paragraph(Math.floor(Math.random() * 3) + 5)).join`\n\n`;
 };
 
-module.exports = { generate, byte, word, sentance, paragraph, page };
+function code(count) {
+    var text = generate(count);
+    switch (vscode.window.activeTextEditor.document.languageId) {
+        case "plaintext":
+            text = text.join`\n`;
+            break;
+        case "xml":
+        case "html":
+            text = `<ul>\n\t<li>${text.join`</li>\n\t<li>`}</li>\n</ul>`;
+            break;
+        case "php":
+            text = `array("${text.join`", "`}")`;
+            break;
+        case "javascript":
+        case "typescript":
+        case "json":
+            text = `[\n\t"${text.join`",\n\t"`}"\n]`;
+            break;
+        case "go":
+        case "java":
+        case "cpp":
+        case "c":
+            text = `{"${text.join`", "`}"}`;
+            break;
+        case "sql":
+            text = `ARRAY["${text.join`", "`}"]`;
+            break;
+        case "yaml", "markdown":
+            text = `- ${text.join`\n- `}`;
+            break;
+        case "ini":
+            text = `array[] = ${text.join`\narray[] = `}`;
+            break;
+        case "shellscript":
+            text = `(${text.join` `})`;
+            break;
+        case "bat":
+            text = `${text.join` `}`;
+            break;
+        case "ruby":
+            text = `%w("${text.join`, `}")`;
+            break;
+        case "haskell":
+        case "rust":
+        case "python":
+            text = `["${text.join`", "`}"]`;
+            break;
+        case "perl":
+            text = `("${text.join`", "`}")`;
+            break;
+        case "csharp":
+            text = `{ "${text.join`", "`}"; } `;
+            break;
+        case "powershell":
+            text = `@("${text.join`", "`}")`;
+            break;
+        default:
+            text = text.join`\n`;
+            break;
+    };
+
+    return text;
+}
+
+module.exports = { generate, byte, word, sentance, paragraph, page, code };
