@@ -6,13 +6,21 @@
 [![CodeQL](https://github.com/aroary/lorem_ipsum/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/aroary/lorem_ipsum/actions/workflows/codeql-analysis.yml)
 [![pages-build-deployment](https://github.com/aroary/lorem_ipsum/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/aroary/lorem_ipsum/actions/workflows/pages/pages-build-deployment)
 #### Capabilities:
-- Generate *n* bytes
-- Generate *n* words
-- Generate *n* sentences
-- Generate *n* paragraphs
-- Generate *n* pages
-- Generate *n* list items in code
+- Generate text
+    - *n* bytes
+    - *n* words
+    - *n* sentences
+    - *n* paragraphs
+    - *n* pages
+    - *n* list items in code
 - Generate image
+    - *1:1* ratio
+    - *2:3* ratio
+    - *4:5* ratio
+    - *5:6* ratio
+    - *5:7* ratio
+    - *16:9* ratio
+    - *11:14* ratio
 - Use multiple [languages](https://github.com/aroary/lorem_ipsum/blob/main/languages/README.md)
 #### Feel free to create an [issue](https://github.com/aroary/lorem_ipsum/issues) or a [pull request](https://github.com/aroary/lorem_ipsum/pulls) to add a language that is not listed here. More information about language support can be found in [/languages/README.md](https://aroary.com/lorem_ipsum/languages)
 ### Changing the generated language
