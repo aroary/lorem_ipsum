@@ -11,7 +11,6 @@ async function execute() {
     ratio = ratio.split(":").map(Number);
 
     const [height, width] = [500, Math.round(500 / (ratio[0] / ratio[1]))];
-
     const lines = 20; // Determined to be acceptable.
 
     const background = await vscode.window.showInputBox({ placeHolder: "CSS Color", ignoreFocusOut: true, title: "Background color", value: "white", validateInput: colorValidation });
@@ -31,7 +30,6 @@ async function execute() {
     `;
 
     const format = await vscode.window.showQuickPick(["png", "jpg", "webp", "tiff", "bmp", "gif"], { ignoreFocusOut: true, placeHolder: "Format", title: "Image format" });
-
     if (!format) return;
 
     var dir;
@@ -47,6 +45,7 @@ async function execute() {
     else console.log(new Date().toISOString(), "No workspace open");
 };
 
+// Allows for color names, hex codes in formats #RGB, #RRGGBB, #RGBA, #RRGGBBAA, rgb and hsl colors in formats (R, G, B), (R G B), (R%, G%, B%), (R% G% B%), (R, G, B, A), (R G B A), (R%, G%, B%, A%), (R% G% B% A%),
 const colorValidation = color => /^[a-z]{3,20}$/i.test(color) || /^#(([0-9a-f]{3}){1,2}|([0-9a-f]{4}){1,2})$/i.test(color) || /^(rgb|hsl)a?\((\s*\d*\.?\d+%?\s*(,\s*)?){3,4}\)$/i.test(color) ? null : "Invalid color"
 
 module.exports = { name: "image", execute };
