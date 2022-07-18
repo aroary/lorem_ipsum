@@ -3,6 +3,7 @@
 version|Supported|
 |:-|:-:|
 |Latest|✔️|
+|v3.0.1|✔️|
 |v3.0.0|✔️|
 |v2|❌|
 |v1|❌|
