@@ -1,5 +1,6 @@
 |release date|version|Supported|description|
 |:-:|:-:|:-:|-|
+|07/18/22|v3.0.1|✔️|Extended browser support|
 |07/17/22|v3.0.0|✔️|Text generated from one command|
 |07/15/22|v2.3.0|❌|Generate images from inputs|
 |07/13/22|v2.2.2|❌|Easier language downloading|
