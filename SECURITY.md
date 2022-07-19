@@ -3,8 +3,7 @@
 version|Supported|
 |:-|:-:|
 |Latest|✔️|
-|v3.0.1|✔️|
-|v3.0.0|✔️|
+|v3.x.x|✔️|
 |v2|❌|
 |v1|❌|
 ##### [changelog](https://github.com/aroary/lorem_ipsum/blob/main/CHANGELOG.md)
