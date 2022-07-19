@@ -21,7 +21,7 @@
     - *5:7* ratio
     - *16:9* ratio
     - *11:14* ratio
-- Use multiple [languages](https://github.com/aroary/lorem_ipsum/blob/main/languages/README.md)
+- Use multiple [languages](https://aroary.com/lorem_ipsum/languages/)
 #### Feel free to create an [issue](https://github.com/aroary/lorem_ipsum/issues) or a [pull request](https://github.com/aroary/lorem_ipsum/pulls) to add a language that is not listed here. More information about language support can be found in [/languages/README.md](https://aroary.com/lorem_ipsum/languages)
 ### Changing the generated language
 #### The language can be changed by running the `Download and change lorem ipsum language` command or by manually adding the `lorem_ipsum.language` setting to the workspace `.vscode/settings.json` file with an `array` of `string`s you want to use.
