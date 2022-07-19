@@ -36,7 +36,7 @@ function changeLanguage(language) {
     return config.get('language');
 };
 
-const types = [byte, word, sentence, paragraph, page, code]
+const types = { byte, word, sentence, paragraph, page, code }
 
 /**
  * @description Generate a text.
