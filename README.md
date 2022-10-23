@@ -30,11 +30,4 @@
 ### Commands
 #### To use the *lorem ipsum* commands, in visual studios code press <kbd>F1</kbd> and type the command you want to run.
 ___
->### featured contributors
->- [aroary](https://github.com/aroary)
->- [SoftwareFuze](https://github.com/SoftwareFuze)
->- [Proconsulates](https://github.com/Proconsulates)
->- [DataBase137](https://github.com/DataBase137)
->- Contributions are welcome!
-
-![](https://contrib.rocks/image?repo=aroary/lorem_ipsum)
+>![](https://contrib.rocks/image?repo=aroary/lorem_ipsum)
