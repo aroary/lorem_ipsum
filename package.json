@@ -134,7 +134,7 @@
   },
   "homepage": "https://github.com/aroary/lorem_ipsum#readme",
   "devDependencies": {
-    "@types/vscode": "^1.78.0",
+    "@types/vscode": "^1.79.0",
     "@vscode/test-web": "^0.0.43"
   },
   "dependencies": {
